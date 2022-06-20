@@ -1,0 +1,31 @@
+.new-calculation {
+  .form-control {
+    border-radius: 4px;
+    &::placeholder {
+      font-size: 16px;
+    }
+    &:focus {
+      border: 1.5px solid #f03b45 !important;
+    }
+  }
+}
+
+
+
+::ng-deep .accordion-item {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125) !important;
+    margin-bottom: 20px;
+    border-radius: 5px !important;
+    overflow: hidden;
+
+    // .accordion-button{
+    // border: 1px solid rgba(0, 0, 0, 0.125);
+    // overflow: hidden;
+
+    // }
+  }
+
+
+
+

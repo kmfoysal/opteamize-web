@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+@font-face {
+  font-family: myFont;
+  src: url(./assets/fonts/ProductSans-Light.ttf) format("truetype");
+}
+
+body {
+  font-family: myFont !important;
+  background-color: #f5f6fa;
+}
+
+:root {
+  --clr-deep-purple: #7a46d9;
+  --clr-light-purple: #a878ff;
+  --clr-title-color: #4c4c4c;
+  --clr-text-color: #606060;
+  --clr-light-text-color: #989898;
+  --clr-filter-text-color: #7a7a7a;
+}
+
+.fs-12{
+
+}
+
+.fs-14 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.fs-16 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.fs-20 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.fs-24 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+}

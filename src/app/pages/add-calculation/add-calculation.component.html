@@ -1,0 +1,210 @@
+<main id="dashboard" class="ps-0 mt-4">
+  <div class="container-fluid">
+    <div class="pageWrapper bg-white p-4 radius-16">
+      <!-- calculation -->
+      <div class="new-calculation-wrapper mb-5">
+        <div
+          class="pageHeader br-b2 pb-4 d-flex justify-content-between align-items-center mb-5"
+        >
+          <h4 class="fs-4 fw-bold text-clr-dark mb-0">Add new calculation</h4>
+          <ul class="list-unstyled mb-0 d-flex gap-5 flex-wrap">
+            <li>
+              <a href="#" class="text-decoration-none d-block text-center">
+                <img
+                  src="assets/images/cross-icon.svg"
+                  alt="icon"
+                  class="img-fluid mb-1"
+                />
+                <p class="fs-14 fw-normal text-clr-gray mb-0">Cancel</p>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none d-block text-center">
+                <img
+                  src="assets/images/save-icon.svg"
+                  alt="icon"
+                  class="img-fluid mb-1"
+                />
+                <p class="fs-14 fw-normal text-clr-gray mb-0">Save as draft</p>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none d-block text-center">
+                <img
+                  src="assets/images/play-circle.svg"
+                  alt="icon"
+                  class="img-fluid mb-1"
+                />
+                <p class="fs-14 fw-normal text-clr-gray mb-0">Run</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="new-calculation">
+          <div class="mb-3">
+            <label
+              for="calculation-name"
+              class="form-label text-clr-gray-deep fs-6 fw-medium"
+            >
+              New calculation name
+            </label>
+            <input
+              type="text"
+              class="form-control h-52 p-3"
+              id="calculation-name"
+              placeholder="Name your new calculation"
+            />
+          </div>
+          <div class="mb-3">
+            <label
+              for="calculation-description"
+              class="form-label text-clr-gray-deep fs-6 fw-medium"
+            >
+              Description
+            </label>
+            <textarea
+              class="form-control h-52 p-3"
+              id="description"
+              rows="10"
+              placeholder="Describe your calculation"
+              style="min-height: 170px"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <!--/ calculation -->
+
+      <ngb-accordion [closeOthers]="true" activeIds="static-1">
+        <ngb-panel id="static-1" title="Select datasets">
+          <ng-template ngbPanelContent>
+            <div class="accordion-desc">
+              <div class="faq-content p-3 border rounded">
+                <div class="row">
+                  <div class="col-xl-6">
+                    <div class="road-routing bg-clr-of-white p-3 rounded-3">
+                      <div class="rr-header mb-4">
+                        <h4
+                          class="mb-0 d-flex align-items-center gap-4 text-clr-purple fs-5"
+                        >
+                          <img
+                            src="assets/images/road-with-broken-.svg"
+                            alt="icon"
+                            class="img-fluid"
+                          />
+                          Road and Routing
+                        </h4>
+                      </div>
+                      <div class="rount-field">
+                        <div
+                          class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3"
+                        >
+                          <div class="rout-label w-25">
+                            <h5 class="text-clr-dark fw-medium fs-5">
+                              Road network
+                            </h5>
+                          </div>
+                          <div
+                            class="select-wrap w-75 d-flex align-items-center gap-3"
+                          >
+                            <select class="form-select h-52 text-clr-dark">
+                              <option selected>
+                                Open street map dd 24-05-2022
+                              </option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                            <div class="show-hide-btn item-visible">
+                              <img
+                                src="assets/images/eye.svg"
+                                alt="icon"
+                                class="img-fluid"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3"
+                        >
+                          <div class="rout-label w-25">
+                            <h5 class="text-clr-dark fw-medium fs-5">
+                              Starting location
+                            </h5>
+                          </div>
+                          <div
+                            class="select-wrap w-75 d-flex align-items-center gap-3"
+                          >
+                            <select class="form-select h-52 text-clr-dark">
+                              <option selected>Starting location 2022</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                            <div class="show-hide-btn item-visible">
+                              <img
+                                src="assets/images/eye.svg"
+                                alt="icon"
+                                class="img-fluid"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3"
+                        >
+                          <div class="rout-label w-25">
+                            <h5 class="text-clr-dark fw-medium fs-5">
+                              Public domain occupancy
+                            </h5>
+                          </div>
+                          <div
+                            class="select-wrap w-75 d-flex align-items-center gap-3"
+                          >
+                            <select
+                              class="form-select h-52 text-clr-dark"
+                              disabled
+                            >
+                              <option selected>
+                                Open street map dd 24-05-2022
+                              </option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                            <div class="show-hide-btn item-disable">
+                              <img
+                                src="assets/images/eye-slash.svg"
+                                alt="icon"
+                                class="img-fluid"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6"></div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-2">
+          <ng-template ngbPanelTitle> Configure calculation </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+  </div>
+</main>

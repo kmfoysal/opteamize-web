@@ -1,0 +1,102 @@
+.calculations {
+  padding: 30px 15px;
+  .sort-bar {
+    height: 70px;
+    padding: 17px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0px 2px 60px rgba(31, 31, 31, 0.02);
+    border-radius: 12px;
+    margin-bottom: 30px;
+    h4 {
+      color: var(--clr-title-color);
+    }
+
+    .select-box {
+      p {
+        width: 100px;
+        color: var(--clr-filter-text-color);
+      }
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .card-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    .add-new {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #ffffff;
+      border: 2px dashed #7a46d9;
+      border-radius: 8px;
+      a {
+        display: block;
+        text-decoration: none;
+        color: var(--clr-deep-purple);
+        margin-bottom: 15px;
+      }
+    }
+
+    .card-item {
+      background-color: #fff;
+      padding: 20px 24px;
+      border-radius: 8px;
+      transition: 0.3s all;
+      cursor: pointer;
+      border: 1px solid transparent;
+        box-shadow: 0px 6px 0px transparent;
+        border-radius: 8px;
+
+      &:hover {
+        border-color:  #a878ff;
+        box-shadow: 0px 6px 0px #a878ff;
+      }
+
+      h5 {
+        color: var(--clr-title-color);
+      }
+
+      hr {
+        opacity: 1;
+        background-color: #e8e8e8;
+        margin-bottom: 30px;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          list-style: none;
+          margin-bottom: 25px;
+          svg {
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .date {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 36px;
+        background: #fafafa;
+        border-radius: 2px;
+        padding: 6px 10px;
+
+        p {
+          color: var(--clr-light-text-color);
+        }
+      }
+    }
+  }
+}

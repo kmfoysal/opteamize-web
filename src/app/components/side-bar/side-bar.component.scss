@@ -1,0 +1,66 @@
+#navigation-sidebar {
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    overflow-x: hidden;
+    box-shadow: 0px 2px 60px rgba(31, 31, 31, 0.02);
+    border-radius: 16px;
+
+    .navigation-header{
+      h5{
+        color: var(--clr-title-color);
+      }
+    }
+    .navigation-widget {
+        .navbar-nav {
+            .nav-item {
+                .nav-link.dropdown-toggle {
+                    border-bottom: 2px solid #e8e8e8;
+                    color: var(--clr-title-color);
+                    &:hover,
+                    &:focus {
+                        color: var(--clr-purple);
+                    }
+                    &::after {
+                        border: 0;
+                        background-image: url(../../../assets/images/arrow-down.svg);
+                        background-repeat: no-repeat;
+                        background-position: top right;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        right: 0;
+                        top: 13px;
+                        transition: all 0.3s linear;
+                    }
+                    &.show {
+                        &::after {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+                &.dropdown {
+                    .dropdown-menu {
+                        width: 100%;
+                        transition: all 0.2s linear;
+
+                        .select-date {
+                            .datepicker {
+                                background-image: url(../../../assets/images/calendar.svg);
+                                background-repeat: no-repeat;
+                                background-size: auto;
+                                background-position: 95% center;
+                                padding-right: 15px;
+                            }
+                        }
+
+                        .form-check-input:checked{
+                          background-color: var( --clr-light-purple);
+                          border-color: var( --clr-light-purple);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
