@@ -1,50 +1,39 @@
-<main id="dashboard" class="ps-0 mt-4">
+<div class="add-new-calculation">
   <div class="container-fluid">
-    <div class="pageWrapper bg-white p-4 radius-16">
+    <div class="pageWrapper">
       <!-- calculation -->
       <div class="new-calculation-wrapper mb-5">
         <div
-          class="pageHeader br-b2 pb-4 d-flex justify-content-between align-items-center mb-5"
+          class="pageHeader d-flex justify-content-between align-items-center"
         >
-          <h4 class="fs-4 fw-bold text-clr-dark mb-0">Add new calculation</h4>
+          <h4 class="fs-24 mb-0">Add new calculation</h4>
           <ul class="list-unstyled mb-0 d-flex gap-5 flex-wrap">
             <li>
               <a href="#" class="text-decoration-none d-block text-center">
-                <img
-                  src="assets/images/cross-icon.svg"
-                  alt="icon"
-                  class="img-fluid mb-1"
-                />
-                <p class="fs-14 fw-normal text-clr-gray mb-0">Cancel</p>
+                <svg-icon src="assets/images/cross-icon.svg"></svg-icon>
+                <p class="fs-14 mb-0 mt-1">Cancel</p>
               </a>
             </li>
             <li>
               <a href="#" class="text-decoration-none d-block text-center">
-                <img
-                  src="assets/images/save-icon.svg"
-                  alt="icon"
-                  class="img-fluid mb-1"
-                />
-                <p class="fs-14 fw-normal text-clr-gray mb-0">Save as draft</p>
+                <svg-icon src="assets/images/save-icon.svg"></svg-icon>
+                <p class="fs-14 fw-normal text-clr-gray mb-0 mt-1">Save as draft</p>
               </a>
             </li>
             <li>
               <a href="#" class="text-decoration-none d-block text-center">
-                <img
-                  src="assets/images/play-circle.svg"
-                  alt="icon"
-                  class="img-fluid mb-1"
-                />
-                <p class="fs-14 fw-normal text-clr-gray mb-0">Run</p>
+                <svg-icon src="assets/images/play-circle.svg"></svg-icon>
+                <p class="fs-14 fw-normal text-clr-gray mb-0 mt-1">Run</p>
               </a>
             </li>
           </ul>
         </div>
+          <hr/>
         <div class="new-calculation">
           <div class="mb-3">
             <label
               for="calculation-name"
-              class="form-label text-clr-gray-deep fs-6 fw-medium"
+              class="form-label fs-16"
             >
               New calculation name
             </label>
@@ -78,133 +67,618 @@
         <ngb-panel id="static-1" title="Select datasets">
           <ng-template ngbPanelContent>
             <div class="accordion-desc">
-              <div class="faq-content p-3 border rounded">
-                <div class="row">
-                  <div class="col-xl-6">
-                    <div class="road-routing bg-clr-of-white p-3 rounded-3">
-                      <div class="rr-header mb-4">
-                        <h4
-                          class="mb-0 d-flex align-items-center gap-4 text-clr-purple fs-5"
-                        >
-                          <img
-                            src="assets/images/road-with-broken-.svg"
-                            alt="icon"
-                            class="img-fluid"
-                          />
-                          Road and Routing
-                        </h4>
+              <div class="faq-content">
+                  <div class="row">
+                      <div class="col-xl-6">
+                          <div class="road-routing bg-clr-of-white p-3 rounded-3 mb-3">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-purple fs-5">
+                                    <svg-icon src="assets/icons/road-with-broken-.svg"></svg-icon>
+                                      Road and Routing
+                                  </h4>
+                              </div>
+                              <div class="rount-field">
+                                  <div class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3">
+                                      <div class="rout-label w-25">
+                                          <h5 class="text-clr-dark fw-medium fs-6">
+                                              Road network
+                                          </h5>
+                                      </div>
+                                      <div class="select-wrap w-75 d-flex align-items-center gap-3">
+                                          <select class="form-select h-52 text-clr-dark fs-6">
+                                              <option selected>Open street map dd 24-05-2022</option>
+                                              <option value="1">Road network 2022</option>
+                                              <option value="2">Road network 2021</option>
+                                              <option value="3">Road network 2020</option>
+                                          </select>
+                                          <div class="show-hide-btn item-visible">
+                                              <svg-icon src="assets/icons/eye.svg"></svg-icon>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3">
+                                      <div class="rout-label w-25">
+                                          <h5 class="text-clr-dark fw-medium fs-6">
+                                              Starting location
+                                          </h5>
+                                      </div>
+                                      <div class="select-wrap w-75 d-flex align-items-center gap-3">
+                                          <select class="form-select h-52 text-clr-dark fs-6">
+                                              <option selected>Starting location 2022</option>
+                                              <option value="1">Starting location 2019</option>
+                                              <option value="2">Starting location 2018</option>
+                                              <option value="3">Starting location 2021</option>
+                                          </select>
+                                          <div class="show-hide-btn item-visible">
+                                            <svg-icon src="assets/icons/eye.svg"></svg-icon>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3">
+                                      <div class="rout-label w-25">
+                                          <h5 class="text-clr-dark fw-medium fs-6">
+                                              Public domain occupancy
+                                          </h5>
+                                      </div>
+                                      <div class="select-wrap w-75 d-flex align-items-center gap-3">
+                                          <select class="form-select h-52 text-clr-dark fs-6" disabled>
+                                              <option selected>Open street map dd 24-05-2022</option>
+                                              <option value="1">Public domain 2021</option>
+                                              <option value="2">Public domain 2022</option>
+                                              <option value="3">Public domain 2020</option>
+                                          </select>
+                                          <div class="disable-btn item-disable">
+                                              <svg-icon src="assets/icons/eye-slash.svg"></svg-icon>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="road-routing bg-clr-of-white p-3 rounded-3 mb-3">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-blue fs-5">
+                                      <svg-icon src="assets/icons/parking-sign.svg"></svg-icon>
+                                      Parking
+                                  </h4>
+                              </div>
+                              <div class="rount-field">
+                                  <div class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3">
+                                      <div class="rout-label w-25">
+                                          <h5 class="text-clr-dark fw-medium fs-6">
+                                              Parking tariff zones
+                                          </h5>
+                                      </div>
+                                      <div class="select-wrap w-75 d-flex align-items-center gap-3">
+                                          <select class="form-select h-52 text-clr-dark fs-6">
+                                              <option selected>Parking tariff zones leuven 2022</option>
+                                              <option value="1">Parking tariff zones 2021</option>
+                                              <option value="2">Parking tariff zones 2020</option>
+                                              <option value="3">Parking tariff zones 2019</option>
+                                          </select>
+                                          <div class="show-hide-btn item-visible">
+                                              <svg-icon src="assets/icons/eye.svg"></svg-icon>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3">
+                                      <div class="rout-label w-25">
+                                          <h5 class="text-clr-dark fw-medium fs-6">
+                                              Parking lanes
+                                          </h5>
+                                      </div>
+                                      <div class="select-wrap w-75 d-flex align-items-center gap-3">
+                                          <select class="form-select h-52 text-clr-dark fs-6">
+                                              <option selected>parking lanes leuven 2022</option>
+                                              <option value="1">Parking lanes</option>
+                                              <option value="2">Parking lanes2</option>
+                                              <option value="3">Parking lanes3</option>
+                                          </select>
+                                          <div class="show-hide-btn item-visible">
+                                              <svg-icon src="assets/icons/eye.svg"></svg-icon>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3">
+                                      <div class="rout-label w-25">
+                                          <h5 class="text-clr-dark fw-medium fs-6">
+                                              Parking pressure
+                                          </h5>
+                                      </div>
+                                      <div class="select-wrap w-75 d-flex align-items-center gap-3">
+                                          <select class="form-select h-52 text-clr-dark fs-6" disabled>
+                                              <option selected>Flowbird data 2021</option>
+                                              <option value="1">Parking pressure 2020</option>
+                                              <option value="2">Parking pressure 2019</option>
+                                              <option value="3">Parking pressure 2022</option>
+                                          </select>
+                                          <div class="disable-btn item-disable">
+                                              <svg-icon src="assets/icons/eye-slash.svg"></svg-icon>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="road-routing bg-clr-of-white p-3 rounded-3 mb-3">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-yellow fs-5">
+                                      <svg-icon src="assets/icons/Amenities.svg"></svg-icon>
+                                      Amenities
+                                  </h4>
+                              </div>
+                              <div class="rount-field">
+                                  <div class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3">
+                                      <div class="rout-label w-25">
+                                          <h5 class="text-clr-dark fw-medium fs-6">
+                                              Bicycle parking
+                                          </h5>
+                                      </div>
+                                      <div class="select-wrap w-75 d-flex align-items-center gap-3">
+                                          <select class="form-select h-52 text-clr-dark fs-6">
+                                              <option selected>OSM bike parking dd 24-5-2022</option>
+                                              <option value="1">Bicycle parking 2021</option>
+                                              <option value="2">Bicycle parking 2020</option>
+                                              <option value="3">Bicycle parking 2019</option>
+                                          </select>
+                                          <div class="show-hide-btn item-visible">
+                                            <svg-icon src="assets/icons/eye.svg"></svg-icon>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3">
+                                      <div class="rout-label w-25">
+                                          <h5 class="text-clr-dark fw-medium fs-6">
+                                              Public toilet
+                                          </h5>
+                                      </div>
+                                      <div class="select-wrap w-75 d-flex align-items-center gap-3">
+                                          <select class="form-select h-52 text-clr-dark fs-6">
+                                              <option selected>parking lanes leaven 2022</option>
+                                              <option value="1">Public toilet 2021</option>
+                                              <option value="2">Public toilet 2020</option>
+                                              <option value="3">Public toilet 2019</option>
+                                          </select>
+                                          <div class="show-hide-btn item-visible">
+                                              <svg-icon src="assets/icons/eye.svg"></svg-icon>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
                       </div>
-                      <div class="rount-field">
-                        <div
-                          class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3"
-                        >
-                          <div class="rout-label w-25">
-                            <h5 class="text-clr-dark fw-medium fs-5">
-                              Road network
-                            </h5>
+                      <div class="col-xl-6">
+                          <div class="googleMap h-100">
+                              <iframe class="rounded-3"
+                                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6027.686980556155!2d-74.12248674990781!3d40.941097216824474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fb64c7310373%3A0xe52d2c3cada5f6ba!2zUmFkYnVybiwgRmFpciBMYXduLCDgpqjgpr_gpokg4Kac4Ka-4Kaw4KeN4Ka44Ka_IDA3NDEwLCDgpq7gpr7gprDgp43gppXgpr_gpqgg4Kav4KeB4KaV4KeN4Kak4Kaw4Ka-4Ka34KeN4Kaf4KeN4Kaw!5e0!3m2!1sbn!2sbd!4v1655698766522!5m2!1sbn!2sbd"
+                                  width="100%" height="825" style="border:0;" allowfullscreen="" loading="lazy"
+                                  referrerpolicy="no-referrer-when-downgrade">
+                              </iframe>
                           </div>
-                          <div
-                            class="select-wrap w-75 d-flex align-items-center gap-3"
-                          >
-                            <select class="form-select h-52 text-clr-dark">
-                              <option selected>
-                                Open street map dd 24-05-2022
-                              </option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                            <div class="show-hide-btn item-visible">
-                              <img
-                                src="assets/images/eye.svg"
-                                alt="icon"
-                                class="img-fluid"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3"
-                        >
-                          <div class="rout-label w-25">
-                            <h5 class="text-clr-dark fw-medium fs-5">
-                              Starting location
-                            </h5>
-                          </div>
-                          <div
-                            class="select-wrap w-75 d-flex align-items-center gap-3"
-                          >
-                            <select class="form-select h-52 text-clr-dark">
-                              <option selected>Starting location 2022</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                            <div class="show-hide-btn item-visible">
-                              <img
-                                src="assets/images/eye.svg"
-                                alt="icon"
-                                class="img-fluid"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="single-rout d-flex align-items-center justify-content-between flex-wrap mb-3"
-                        >
-                          <div class="rout-label w-25">
-                            <h5 class="text-clr-dark fw-medium fs-5">
-                              Public domain occupancy
-                            </h5>
-                          </div>
-                          <div
-                            class="select-wrap w-75 d-flex align-items-center gap-3"
-                          >
-                            <select
-                              class="form-select h-52 text-clr-dark"
-                              disabled
-                            >
-                              <option selected>
-                                Open street map dd 24-05-2022
-                              </option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                            <div class="show-hide-btn item-disable">
-                              <img
-                                src="assets/images/eye-slash.svg"
-                                alt="icon"
-                                class="img-fluid"
-                              />
-                            </div>
-                          </div>
-                        </div>
                       </div>
-                    </div>
                   </div>
-                  <div class="col-xl-6"></div>
-                </div>
               </div>
-            </div>
+          </div>
           </ng-template>
         </ngb-panel>
         <ngb-panel id="static-2">
           <ng-template ngbPanelTitle> Configure calculation </ng-template>
           <ng-template ngbPanelContent>
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
-            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-            single-origin coffee nulla assumenda shoreditch et. Nihil anim
-            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth
-            nesciunt you probably haven't heard of them accusamus labore
-            sustainable VHS.
+            <div class="accordion-desc">
+              <div class="faq-content">
+                  <div class="row">
+                      <div class="col-lg-6 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                    <svg-icon src="assets/icons/people.svg"></svg-icon>
+                                      Teams
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Number of teams</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="number" class="form-control fw-bold text-clr-dark fs-4 h-56 px-3" value="3">
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>People of team</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="number" class="form-control fw-bold text-clr-dark fs-4 h-56 px-3" value="2">
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                    <svg-icon src="assets/icons/calendar2.svg"></svg-icon>
+                                      Period
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Start date</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="date" class="datepicker form-control fw-bold text-clr-dark fs-4 h-56 px-3"
+                                              placeholder="25-05-2022" />
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>End date</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="text" class="datepicker form-control fw-bold text-clr-dark fs-4 h-56 px-3"
+                                              placeholder="26-05-2022" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                    <svg-icon src="assets/icons/timer.svg"></svg-icon>
+                                      Shift
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Length of shift</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="text" class="timepicker form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Tolerance</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="5" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                    <svg-icon src="assets/icons/car.svg"></svg-icon>
+                                      Enforcement zone size
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Minimum number of bays</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="25" />
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Maximum number of bays</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="300" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-9 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                      <svg-icon src="assets/icons/map.svg"></svg-icon>
+                                      Enforcement zone
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item w-30 p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Reachable on foot in</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="text" class="timepicker form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item w-30 p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-2">
+                                          <span>Reachable on bike in</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="form-check mb-3">
+                                          <input class="form-check-input" type="checkbox" id="planned" checked="">
+                                          <label class="form-check-label text-clr-gray fw-normal fs-14" for="planned">
+                                              Bike available
+                                          </label>
+                                      </div>
+                                      <div class="not">
+                                          <input type="text" class="timepicker form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item w-30 p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Mix parking tariffs</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="form-check form-switch d-flex justify-content-center flex-column align-items-center p-0">
+                                          <div class="SwitchChecked mb-3">
+                                              <input class="form-check-input" type="checkbox" id="SwitchChecked" checked />
+                                          </div>
+                                          <label class="form-check-label d-block me-4" for="SwitchChecked">
+                                              Yes, please
+                                          </label>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4 h-100">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                      <svg-icon src="assets/icons/element-3.svg"></svg-icon>
+                                      Amenities
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item w-100 p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Reachable on foot in</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not pb-3">
+                                          <input type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="2" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                    <svg-icon src="assets/icons/timer.svg"></svg-icon>
+                                      Enforcement time
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Time to check</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="text" class="timepicker form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Time to write</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="text" class="timepicker form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                      <svg-icon src="assets/icons/speedometer.svg"></svg-icon>
+                                      Speed
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Walking speed</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="25" />
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Biking speed</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/speedometer.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="300" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
           </ng-template>
         </ngb-panel>
       </ngb-accordion>
     </div>
   </div>
-</main>
+</div>

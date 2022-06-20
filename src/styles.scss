@@ -20,6 +20,18 @@ body {
   --clr-text-color: #606060;
   --clr-light-text-color: #989898;
   --clr-filter-text-color: #7a7a7a;
+
+
+
+  --clr-purple: #7a46d9;
+    --clr-purple-light: #a878ff;
+    --clr-dark: #4c4c4c;
+    --clr-gray: #7a7a7a;
+    --clr-gray-light: #fafafa;
+    --clr-gray-deep: #606060;
+    --clr-of-white: #f5f6fa;
+    --clr-blue: #269af2;
+    --clr-yellow: #f9a633;
 }
 
 .fs-12{
@@ -49,3 +61,154 @@ body {
   font-size: 24px;
   line-height: 34px;
 }
+
+
+
+/* helper , base classes */
+
+
+.container-fluid {
+  padding-left: var(--theme-gutter);
+  padding-right: var(--theme-gutter);
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-semi-bold {
+  font-weight: 600;
+}
+
+.is-shadow {
+  box-shadow: 0px 2px 60px rgba(31, 31, 31, 0.02);
+}
+.shadow2 {
+  box-shadow: 0px 2px 2px #ebebeb;
+}
+.fs-14 {
+  font-size: 14px;
+}
+
+.form-control,
+.form-select {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  font-size: 14px;
+
+  &::placeholder {
+      font-size: 14px;
+  }
+  &:focus {
+      box-shadow: none;
+  }
+}
+
+.form-control:focus,
+.form-control:hover {
+  box-shadow: none;
+  outline: none;
+  border-color: var(--clr-purple);
+}
+
+.btn {
+  &:focus {
+      outline: none;
+      box-shadow: none;
+  }
+}
+
+.text-blue-dark {
+  color: var(--clr-blue-dark);
+}
+.text-clr-blue {
+  color: var(--clr-blue);
+}
+.text-clr-yellow {
+  color: var(--clr-yellow);
+}
+
+.text-clr-dark {
+  color: var(--clr-dark);
+}
+.text-clr-gray {
+  color: var(--clr-gray);
+}
+.text-clr-purple {
+  color: var(--clr-purple);
+}
+.text-clr-gray-deep {
+  color: var(--clr-gray-deep);
+}
+
+.bg-blue-dark {
+  background-color: var(--clr-blue-dark);
+}
+.bg-clr-gray-light {
+  background-color: var(--clr-gray-light);
+}
+.bg-clr-of-white {
+  background-color: var(--clr-of-white);
+}
+.form-search {
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  background-size: 18px;
+  background-image: url(./assets/icons/search-normal.svg);
+  color: var(--clr-gray);
+
+  &::-webkit-input-placeholder,
+  &:-ms-input-placeholder,
+  &::-ms-input-placeholder,
+  &::placeholder {
+      color: var(--clr-gray);
+  }
+}
+.form-control,
+input {
+  border: 1.5px solid #e8e8e8;
+  height: 42px;
+  &::placeholder {
+      color: #bcbcbc;
+      font-size: 12px;
+  }
+  &:focus {
+      border-color: var(--clr-purple) !important;
+  }
+}
+.form-check-input:checked {
+  background-color: var(--clr-purple-light);
+  border-color: var(--clr-purple-light);
+}
+.radius-16 {
+  border-radius: 16px;
+}
+.br-b2 {
+  border-bottom: 2px solid #e8e8e8;
+}
+.h-52 {
+  height: 52px;
+}
+.h-56 {
+  height: 56px;
+}
+.form-select:disabled {
+  background-color: #fff;
+  color: #bcbcbc;
+  opacity: 0.5;
+}
+.datepicker {
+  background-image: url(./assets/icons/calendar.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 95% center;
+  padding-right: 15px;
+}
+.timepicker {
+  background-image: url(./assets/icons/clock.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 95% center;
+  padding-right: 15px;
+}
+/* helper , base classes  - END*/
