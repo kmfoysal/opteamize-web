@@ -11,10 +11,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { CalculationsComponent } from './pages/calculations/calculations.component';
 import { AddCalculationComponent } from './pages/add-calculation/add-calculation.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { FormsModule } from '@angular/forms';
+import { RangeDatePickerComponent } from './components/range-date-picker/range-date-picker.component';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, HeaderComponent, CalculationsComponent, AddCalculationComponent, SideBarComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule, AngularSvgIconModule.forRoot()],
+  declarations: [AppComponent, FooterComponent, HeaderComponent, CalculationsComponent, AddCalculationComponent, SideBarComponent, RangeDatePickerComponent],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, HttpClientModule, AngularSvgIconModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent],
 })

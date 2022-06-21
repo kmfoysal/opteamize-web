@@ -26,17 +26,18 @@
                 </a>
                 <a href="" class="fs-16">Add new calculation</a>
               </div>
-              <div class="card-item">
-                <h5 class="fs-20">Marktrock</h5>
+              <div *ngFor="let item of calculations" class="card-item">
+                <h5 class="fs-20">{{ item.calculationName }}</h5>
                 <hr />
                 <ul>
                   <li>
                     <svg-icon src="assets/icons/3 users.svg"></svg-icon>
-                    3 teams of 2
+                    <span>{{ item.numberOfTeams }}</span> teams of
+                    <span>{{ item.peopleOfTeam }}</span>
                   </li>
                   <li>
                     <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
-                    24-5-2022 until 31-5-2022
+                    {{ item.startDate }} until {{ item.endDate }}
                   </li>
                   <li>
                     <svg-icon src="assets/icons/flag.svg"></svg-icon>
@@ -49,116 +50,8 @@
                   </li>
                 </ul>
                 <div class="date">
-                  <p class="m-0 fs-14">24-5-2022</p>
-                  <p class="m-0 fs-14">11:49PM</p>
-                </div>
-              </div>
-              <div class="card-item">
-                <h5 class="fs-20">Marktrock</h5>
-                <hr />
-                <ul>
-                  <li>
-                    <svg-icon src="assets/icons/3 users.svg"></svg-icon>
-                    3 teams of 2
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
-                    24-5-2022 until 31-5-2022
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/flag.svg"></svg-icon>
-
-                    Finished
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/cardcalendar.svg"></svg-icon>
-                    Planned
-                  </li>
-                </ul>
-                <div class="date">
-                  <p class="m-0 fs-14">24-5-2022</p>
-                  <p class="m-0 fs-14">11:49PM</p>
-                </div>
-              </div>
-              <div class="card-item">
-                <h5 class="fs-20">Marktrock</h5>
-                <hr />
-                <ul>
-                  <li>
-                    <svg-icon src="assets/icons/3 users.svg"></svg-icon>
-                    3 teams of 2
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
-                    24-5-2022 until 31-5-2022
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/flag.svg"></svg-icon>
-
-                    Finished
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/cardcalendar.svg"></svg-icon>
-                    Planned
-                  </li>
-                </ul>
-                <div class="date">
-                  <p class="m-0 fs-14">24-5-2022</p>
-                  <p class="m-0 fs-14">11:49PM</p>
-                </div>
-              </div>
-              <div class="card-item">
-                <h5 class="fs-20">Marktrock</h5>
-                <hr />
-                <ul>
-                  <li>
-                    <svg-icon src="assets/icons/3 users.svg"></svg-icon>
-                    3 teams of 2
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
-                    24-5-2022 until 31-5-2022
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/flag.svg"></svg-icon>
-
-                    Finished
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/cardcalendar.svg"></svg-icon>
-                    Planned
-                  </li>
-                </ul>
-                <div class="date">
-                  <p class="m-0 fs-14">24-5-2022</p>
-                  <p class="m-0 fs-14">11:49PM</p>
-                </div>
-              </div>
-              <div class="card-item">
-                <h5 class="fs-20">Marktrock</h5>
-                <hr />
-                <ul>
-                  <li>
-                    <svg-icon src="assets/icons/3 users.svg"></svg-icon>
-                    3 teams of 2
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
-                    24-5-2022 until 31-5-2022
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/flag.svg"></svg-icon>
-
-                    Finished
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/cardcalendar.svg"></svg-icon>
-                    Planned
-                  </li>
-                </ul>
-                <div class="date">
-                  <p class="m-0 fs-14">24-5-2022</p>
-                  <p class="m-0 fs-14">11:49PM</p>
+                  <p class="m-0 fs-14">{{ item.startDate }}</p>
+                  <p class="m-0 fs-14">{{item.timeToCheck}}</p>
                 </div>
               </div>
             </div>

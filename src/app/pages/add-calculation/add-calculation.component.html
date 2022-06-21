@@ -1,6 +1,7 @@
 <div class="add-new-calculation">
   <div class="container-fluid">
-    <div class="pageWrapper">
+
+    <form (submit)="createSubmit()" class="pageWrapper">
       <!-- calculation -->
       <div class="new-calculation-wrapper mb-5">
         <div
@@ -21,10 +22,10 @@
               </a>
             </li>
             <li>
-              <a href="#" class="text-decoration-none d-block text-center">
+              <button type="submit" class="text-decoration-none d-block text-center b-0">
                 <svg-icon src="assets/images/play-circle.svg"></svg-icon>
                 <p class="fs-14 fw-normal text-clr-gray mb-0 mt-1">Run</p>
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -38,10 +39,13 @@
               New calculation name
             </label>
             <input
+              [(ngModel)] = "calculation.calculationName"
+              name = calculationName
               type="text"
               class="form-control h-52 p-3"
               id="calculation-name"
               placeholder="Name your new calculation"
+              required
             />
           </div>
           <div class="mb-3">
@@ -52,6 +56,8 @@
               Description
             </label>
             <textarea
+              [(ngModel)] = "calculation.calculationDesc"
+              name="calculationDesc"
               class="form-control h-52 p-3"
               id="description"
               rows="10"
@@ -85,7 +91,7 @@
                                           </h5>
                                       </div>
                                       <div class="select-wrap w-75 d-flex align-items-center gap-3">
-                                          <select class="form-select h-52 text-clr-dark fs-6">
+                                          <select [(ngModel)] = "calculation.roadNetwork" name="roadNetwork" class="form-select h-52 text-clr-dark fs-6">
                                               <option selected>Open street map dd 24-05-2022</option>
                                               <option value="1">Road network 2022</option>
                                               <option value="2">Road network 2021</option>
@@ -103,7 +109,7 @@
                                           </h5>
                                       </div>
                                       <div class="select-wrap w-75 d-flex align-items-center gap-3">
-                                          <select class="form-select h-52 text-clr-dark fs-6">
+                                          <select [(ngModel)] = "calculation.startingLocation" name="startingLocation" class="form-select h-52 text-clr-dark fs-6">
                                               <option selected>Starting location 2022</option>
                                               <option value="1">Starting location 2019</option>
                                               <option value="2">Starting location 2018</option>
@@ -121,7 +127,7 @@
                                           </h5>
                                       </div>
                                       <div class="select-wrap w-75 d-flex align-items-center gap-3">
-                                          <select class="form-select h-52 text-clr-dark fs-6" disabled>
+                                          <select [(ngModel)] = "calculation.publicDomainOccupancy" name="publicDomainOccupancy" class="form-select h-52 text-clr-dark fs-6" disabled>
                                               <option selected>Open street map dd 24-05-2022</option>
                                               <option value="1">Public domain 2021</option>
                                               <option value="2">Public domain 2022</option>
@@ -149,7 +155,7 @@
                                           </h5>
                                       </div>
                                       <div class="select-wrap w-75 d-flex align-items-center gap-3">
-                                          <select class="form-select h-52 text-clr-dark fs-6">
+                                          <select [(ngModel)] = "calculation.parkingZone" name="parkingZone" class="form-select h-52 text-clr-dark fs-6">
                                               <option selected>Parking tariff zones leuven 2022</option>
                                               <option value="1">Parking tariff zones 2021</option>
                                               <option value="2">Parking tariff zones 2020</option>
@@ -167,7 +173,7 @@
                                           </h5>
                                       </div>
                                       <div class="select-wrap w-75 d-flex align-items-center gap-3">
-                                          <select class="form-select h-52 text-clr-dark fs-6">
+                                          <select [(ngModel)] = "calculation.parkingLane" name="parkingLane" class="form-select h-52 text-clr-dark fs-6">
                                               <option selected>parking lanes leuven 2022</option>
                                               <option value="1">Parking lanes</option>
                                               <option value="2">Parking lanes2</option>
@@ -185,7 +191,7 @@
                                           </h5>
                                       </div>
                                       <div class="select-wrap w-75 d-flex align-items-center gap-3">
-                                          <select class="form-select h-52 text-clr-dark fs-6" disabled>
+                                          <select [(ngModel)] = "calculation.parkingPressure" name="parkingPressure" class="form-select h-52 text-clr-dark fs-6" disabled>
                                               <option selected>Flowbird data 2021</option>
                                               <option value="1">Parking pressure 2020</option>
                                               <option value="2">Parking pressure 2019</option>
@@ -213,7 +219,7 @@
                                           </h5>
                                       </div>
                                       <div class="select-wrap w-75 d-flex align-items-center gap-3">
-                                          <select class="form-select h-52 text-clr-dark fs-6">
+                                          <select [(ngModel)] = "calculation.bycycleParking" name="bycycleParking" class="form-select h-52 text-clr-dark fs-6">
                                               <option selected>OSM bike parking dd 24-5-2022</option>
                                               <option value="1">Bicycle parking 2021</option>
                                               <option value="2">Bicycle parking 2020</option>
@@ -231,7 +237,7 @@
                                           </h5>
                                       </div>
                                       <div class="select-wrap w-75 d-flex align-items-center gap-3">
-                                          <select class="form-select h-52 text-clr-dark fs-6">
+                                          <select [(ngModel)] = "calculation.publicToilet" name="publicToilet" class="form-select h-52 text-clr-dark fs-6">
                                               <option selected>parking lanes leaven 2022</option>
                                               <option value="1">Public toilet 2021</option>
                                               <option value="2">Public toilet 2020</option>
@@ -290,7 +296,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="number" class="form-control fw-bold text-clr-dark fs-4 h-56 px-3" value="3">
+                                          <input [(ngModel)] = "calculation.numberOfTeams" name="numberOfTeams" type="number" class="form-control fw-bold text-clr-dark fs-4 h-56 px-3" value="3">
                                       </div>
                                   </div>
                                   <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
@@ -309,7 +315,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="number" class="form-control fw-bold text-clr-dark fs-4 h-56 px-3" value="2">
+                                          <input [(ngModel)] = "calculation.peopleOfTeam" name="peopleOfTeam" type="number" class="form-control fw-bold text-clr-dark fs-4 h-56 px-3" value="2">
                                       </div>
                                   </div>
                               </div>
@@ -340,7 +346,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="date" class="datepicker form-control fw-bold text-clr-dark fs-4 h-56 px-3"
+                                          <input [(ngModel)] = "calculation.startDate" name="startDate" type="date" class="form-control fw-bold text-clr-dark fs-4 h-56 px-3"
                                               placeholder="25-05-2022" />
                                       </div>
                                   </div>
@@ -360,7 +366,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="text" class="datepicker form-control fw-bold text-clr-dark fs-4 h-56 px-3"
+                                          <input [(ngModel)] = "calculation.endDate" name="endDate" type="date" class=" form-control fw-bold text-clr-dark fs-4 h-56 px-3"
                                               placeholder="26-05-2022" />
                                       </div>
                                   </div>
@@ -392,7 +398,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="text" class="timepicker form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
+                                          <input [(ngModel)] = "calculation.lengthOfShift" name="lengthOfShift" type="time" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
                                       </div>
                                   </div>
                                   <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
@@ -411,7 +417,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="5" />
+                                          <input [(ngModel)] = "calculation.tolerance" name="tolerance" type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="5" />
                                       </div>
                                   </div>
                               </div>
@@ -442,7 +448,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="25" />
+                                          <input [(ngModel)] = "calculation.minNumBuys" name="minNumBuys" type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="25" />
                                       </div>
                                   </div>
                                   <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
@@ -461,7 +467,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="300" />
+                                          <input [(ngModel)] = "calculation.maxNumBuys" name="maxNumBuys" type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="300" />
                                       </div>
                                   </div>
                               </div>
@@ -492,7 +498,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="text" class="timepicker form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
+                                          <input [(ngModel)] = "calculation.reachableOnFoot" name="reachableOnFoot" type="time" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
                                       </div>
                                   </div>
                                   <div class="cCard-body-item w-30 p-3 bg-white rounded-3 shadow2">
@@ -511,13 +517,13 @@
                                           </div>
                                       </h5>
                                       <div class="form-check mb-3">
-                                          <input class="form-check-input" type="checkbox" id="planned" checked="">
+                                          <input [(ngModel)] = "calculation.parkingLane" name="parkingLane" class="form-check-input" type="checkbox" id="planned" checked="">
                                           <label class="form-check-label text-clr-gray fw-normal fs-14" for="planned">
                                               Bike available
                                           </label>
                                       </div>
                                       <div class="not">
-                                          <input type="text" class="timepicker form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
+                                          <input [(ngModel)] = "calculation.reachableOnbike" name="reachableOnbike" type="time" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
                                       </div>
                                   </div>
                                   <div class="cCard-body-item w-30 p-3 bg-white rounded-3 shadow2">
@@ -537,7 +543,7 @@
                                       </h5>
                                       <div class="form-check form-switch d-flex justify-content-center flex-column align-items-center p-0">
                                           <div class="SwitchChecked mb-3">
-                                              <input class="form-check-input" type="checkbox" id="SwitchChecked" checked />
+                                              <input [(ngModel)] = "calculation.mixParkingtriff" name="mixParkingtriff" class="form-check-input" type="checkbox" id="SwitchChecked" checked />
                                           </div>
                                           <label class="form-check-label d-block me-4" for="SwitchChecked">
                                               Yes, please
@@ -558,7 +564,7 @@
                               <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
                                   <div class="cCard-body-item w-100 p-3 bg-white rounded-3 shadow2">
                                       <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
-                                          <span>Reachable on foot in</span>
+                                          <span>Minimum number of toilets</span>
                                           <div class="tooltip-wrap position-relative">
                                               <span class="tooltip-icon pe-4">
                                                 <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
@@ -571,7 +577,7 @@
                                           </div>
                                       </h5>
                                       <div class="not pb-3">
-                                          <input type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="2" />
+                                          <input [(ngModel)] = "calculation.minNumToilets" name="minNumToilets" type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="2" />
                                       </div>
                                   </div>
                               </div>
@@ -601,7 +607,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="text" class="timepicker form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
+                                          <input [(ngModel)] = "calculation.timeToCheck" name="timeToCheck" type="time" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
                                       </div>
                                   </div>
                                   <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
@@ -619,7 +625,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="text" class="timepicker form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
+                                          <input [(ngModel)] = "calculation.timeToWrite" name="timeToWrite" type="time" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" />
                                       </div>
                                   </div>
                               </div>
@@ -649,7 +655,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="25" />
+                                          <input [(ngModel)] = "calculation.walkingSpeed" name="walkingSpeed" type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="25" />
                                       </div>
                                   </div>
                                   <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
@@ -667,7 +673,7 @@
                                           </div>
                                       </h5>
                                       <div class="not">
-                                          <input type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="300" />
+                                          <input [(ngModel)] = "calculation.bikingSpeed" name="bikingSpeed" type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value="300" />
                                       </div>
                                   </div>
                               </div>
@@ -679,6 +685,6 @@
           </ng-template>
         </ngb-panel>
       </ngb-accordion>
-    </div>
+    </form>
   </div>
 </div>
