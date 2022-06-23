@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { CalculationModel } from '../models/CalculationModel';
+import { Job } from './job.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,17 +17,17 @@ export class CalculationService {
 
   // Get All Calculations
 
-  public getAllCalculations():Observable<CalculationModel[]>{
+  public getAllCalculations():Observable<Job[]>{
     let url:string = `${this.apiUrl}/calculations`;
-    return this.httpClient.get<CalculationModel[]>(url).pipe(catchError(this.handleError))
+    return this.httpClient.get<Job[]>(url).pipe(catchError(this.handleError))
   }
 
 
   // Create Calculations
 
-   public createCalculations(calculation: CalculationModel):Observable<CalculationModel>{
+   public createCalculations(calculation: Job):Observable<Job>{
     let url:string = `${this.apiUrl}/calculations`;
-    return this.httpClient.post<CalculationModel>(url,  calculation).pipe(catchError(this.handleError))
+    return this.httpClient.post<Job>(url,  calculation).pipe(catchError(this.handleError))
   }
 
 

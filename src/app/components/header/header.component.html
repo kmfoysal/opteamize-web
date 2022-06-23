@@ -18,13 +18,13 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav m-auto gap-5">
-          <li class="nav-item active d-flex align-items-center">
+          <li class="nav-item d-flex align-items-center" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
             <svg-icon src="assets/icons/calculator.svg"></svg-icon>
-            <a class="nav-link" routerLink="/">Calculation</a>
+            <a class="nav-link" routerLink="/" >Calculation</a>
           </li>
-          <li class="nav-item d-flex align-items-center">
+          <li class="nav-item d-flex align-items-center" [routerLinkActive]="['active']">
             <svg-icon src="assets/icons/task.svg"></svg-icon>
-            <a class="nav-link" routerLink="/">Queue</a>
+            <a class="nav-link" routerLink="/queue">Queue</a>
           </li>
           <li class="nav-item d-flex align-items-center">
             <svg-icon src="assets/icons/calendar.svg"></svg-icon>

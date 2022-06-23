@@ -14,9 +14,11 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { FormsModule } from '@angular/forms';
 import { RangeDatePickerComponent } from './components/range-date-picker/range-date-picker.component';
 import { Ng5SliderModule } from 'ng5-slider';
+import { FilterPipesPipe } from './pipes/filter-pipes.pipe';
+import { QueueComponent } from './pages/queue/queue.component';
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, HeaderComponent, CalculationsComponent, AddCalculationComponent, SideBarComponent, RangeDatePickerComponent],
+  declarations: [AppComponent, FooterComponent, HeaderComponent, CalculationsComponent, AddCalculationComponent, SideBarComponent, RangeDatePickerComponent, FilterPipesPipe, QueueComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, HttpClientModule, Ng5SliderModule, AngularSvgIconModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent],

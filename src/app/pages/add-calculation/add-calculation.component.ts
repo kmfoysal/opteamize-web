@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CalculationModel } from 'src/app/models/CalculationModel';
 import { CalculationService } from 'src/app/services/calculation.service';
+import { Job } from 'src/app/services/job.model';
 
 @Component({
   selector: 'app-add-calculation',
@@ -10,7 +10,7 @@ import { CalculationService } from 'src/app/services/calculation.service';
 })
 export class AddCalculationComponent implements OnInit {
 
-  public calculation: CalculationModel = {} as CalculationModel
+  public calculation: Job = {} as Job
 
   constructor(private calculationService: CalculationService, private router: Router) { }
 

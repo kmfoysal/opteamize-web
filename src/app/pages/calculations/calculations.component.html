@@ -1,57 +1,350 @@
-<div class="calculations">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-3">
-        <app-side-bar></app-side-bar>
-      </div>
-      <div class="col-lg-9">
-        <div class="row">
-          <div class="col-12">
-            <div class="sort-bar">
-              <h4 class="fs-24">Calculations</h4>
-              <div class="select-box">
-                <p class="fs-14 m-0">Order by</p>
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Date (Ascending)</option>
-                  <option value="2">Date (Descending)</option>
-                </select>
-              </div>
+<aside id="navigation-sidebar"  [ngClass]="hamburger ? 'bg-white is-shadow p-4 radius-16 side-bar-open' : 'bg-white is-shadow p-4 radius-16 sidebar-collapse'">
+  <div
+    class="navigation-header d-flex align-items-center justify-content-between gap-3 mb-4"
+  >
+    <h5 class="fs-20" [ngClass]="hamburger ? 'fs-20' : 'd-none'">Filter</h5>
+    <button type="button" class="btn btn-sidebar-toggle btn-sm" (click)="this.hamburger = !this.hamburger">
+      <svg-icon src="assets/images/menu-bar.svg"></svg-icon>
+      <!-- <img src="assets/images/menu-bar.svg" alt="icon" class="img-fluid" /> -->
+    </button>
+  </div>
+  <div [ngClass]="hamburger ? 'navigation-widget pt-2' : 'd-none'">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown search mb-4">
+        <a
+          class="nav-link dropdown-toggle text-clr-dark fw-normal fs-16 pb-3"
+          href="#"
+          role="button"
+          (click)="this.serachToggle = !this.serachToggle"
+        >
+          Search
+        </a>
+        <ul *ngIf="serachToggle" class="border-0 mt-2 p-0">
+          <div class="dropdown-content">
+            <input
+              type="search"
+              class="form-control form-search"
+              placeholder="Search here"
+              [(ngModel)]="filteredString"
+            />
+          </div>
+        </ul>
+      </li>
+      <li class="nav-item dropdown number-of-teams mb-4">
+        <a
+          class="nav-link dropdown-toggle text-clr-dark fw-normal fs-6 pb-3"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          (click)="this.teamtoggle = !this.teamtoggle"
+        >
+          Number of teams
+        </a>
+        <ul
+          *ngIf="teamtoggle"
+          class="border-0 mt-2 p-0"
+          aria-labelledby="navbarDropdown"
+        >
+          <div class="dropdown-content">
+            <div class="team-count d-flex gap-4 align-items-center">
+              <input
+                type="number"
+                class="form-control fw-bold text-clr-dark fs-5"
+                [(ngModel)]="teamsMinValue"
+              />
+              <span class="fw-bold text-clr-dark">to</span>
+              <input
+                type="number"
+                class="form-control fw-bold text-clr-dark fs-5"
+                [(ngModel)]="teamsMaxValue"
+              />
+            </div>
+
+            <ng5-slider
+              [(value)]="teamsMinValue"
+              [(highValue)]="teamsMaxValue"
+              [options]="teamsOptions"
+            ></ng5-slider>
+          </div>
+        </ul>
+      </li>
+      <li class="nav-item dropdown teamsize mb-4">
+        <a
+          class="nav-link dropdown-toggle text-clr-dark fw-normal fs-6 pb-3"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          (click)="this.teamSizetoggle = !this.teamSizetoggle"
+        >
+          Teamsize
+        </a>
+        <ul
+          *ngIf="teamSizetoggle"
+          class="border-0 mt-2 p-0"
+          aria-labelledby="navbarDropdown"
+        >
+          <div class="dropdown-content">
+            <div class="team-count d-flex gap-4 align-items-center">
+              <input
+                type="number"
+                class="form-control fw-bold text-clr-dark fs-5"
+                [(ngModel)]="teamSizeMinValue"
+              />
+              <span class="fw-bold text-clr-dark">to</span>
+              <input
+                type="number"
+                class="form-control fw-bold text-clr-dark fs-5"
+                [(ngModel)]="teamSizeMaxValue"
+              />
+            </div>
+
+            <ng5-slider
+              [(value)]="teamSizeMinValue"
+              [(highValue)]="teamSizeMaxValue"
+              [options]="teamSizeOptions"
+            ></ng5-slider>
+          </div>
+        </ul>
+      </li>
+      <li class="nav-item dropdown status mb-4">
+        <a
+          class="nav-link dropdown-toggle text-clr-dark fw-normal fs-6 pb-3"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          (click)="this.statustoggle = !this.statustoggle"
+        >
+          Status
+        </a>
+        <ul
+          *ngIf="statustoggle"
+          class="border-0 mt-2 p-0"
+          aria-labelledby="navbarDropdown"
+        >
+          <div class="dropdown-content">
+            <div class="form-check mb-2">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="check1"
+                checked
+              />
+              <label
+                class="form-check-label text-clr-gray fw-normal fs-14"
+                for="check1"
+              >
+                Finished
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="check2"
+                checked
+              />
+              <label
+                class="form-check-label text-clr-gray fw-normal fs-14"
+                for="check2"
+              >
+                Draft
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="check3" />
+              <label
+                class="form-check-label text-clr-gray fw-normal fs-14"
+                for="check3"
+              >
+                Pending
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="check4" />
+              <label
+                class="form-check-label text-clr-gray fw-normal fs-14"
+                for="check4"
+              >
+                Failed
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="check5" />
+              <label
+                class="form-check-label text-clr-gray fw-normal fs-14"
+                for="check5"
+              >
+                Archived
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="check6" />
+              <label
+                class="form-check-label text-clr-gray fw-normal fs-14"
+                for="check6"
+              >
+                Running
+              </label>
             </div>
           </div>
-          <div class="col-12">
-            <div class="card-area">
-              <div class="add-new">
-                <a routerLink="addcalculation">
-                  <svg-icon src="assets/icons/add.svg"></svg-icon>
-                </a>
-                <a href="" class="fs-16">Add new calculation</a>
-              </div>
-              <div *ngFor="let item of calculations" class="card-item">
-                <h5 class="fs-20">{{ item.calculationName }}</h5>
-                <hr />
-                <ul>
-                  <li>
-                    <svg-icon src="assets/icons/3 users.svg"></svg-icon>
-                    <span>{{ item.numberOfTeams }}</span> teams of
-                    <span>{{ item.peopleOfTeam }}</span>
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
-                    {{ item.startDate }} until {{ item.endDate }}
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/flag.svg"></svg-icon>
+        </ul>
+      </li>
+      <li class="nav-item dropdown planned mb-4">
+        <a
+          class="nav-link dropdown-toggle text-clr-dark fw-normal fs-6 pb-3"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          (click)="this.planningtoggle = !this.planningtoggle"
+        >
+          Planned
+        </a>
+        <ul
+          *ngIf="planningtoggle"
+          class="border-0 mt-2 p-0"
+          aria-labelledby="navbarDropdown"
+        >
+          <div class="dropdown-content">
+            <div class="form-check mb-2">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="planned"
+                checked
+              />
+              <label
+                class="form-check-label text-clr-gray fw-normal fs-14"
+                for="planned"
+              >
+                Planned
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="pnplanned" />
+              <label
+                class="form-check-label text-clr-gray fw-normal fs-14"
+                for="pnplanned"
+              >
+                Unplanned
+              </label>
+            </div>
+          </div>
+        </ul>
+      </li>
+      <li class="nav-item dropdown timewindow mb-4">
+        <a
+          class="nav-link dropdown-toggle text-clr-dark fw-normal fs-6 pb-3"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          (click)="this.timeWindowToggle = !this.timeWindowToggle"
+        >
+          Timewindow
+        </a>
+        <ul
+          *ngIf="timeWindowToggle"
+          class="border-0 mt-2 p-0"
+          aria-labelledby="navbarDropdown"
+        >
+          <div class="dropdown-content">
+            <app-range-date-picker></app-range-date-picker>
+          </div>
+        </ul>
+      </li>
+      <li class="nav-item dropdown updated mb-4">
+        <a
+          class="nav-link dropdown-toggle text-clr-dark fw-normal fs-6 pb-3"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          (click)="this.upadatedToggle = !this.upadatedToggle"
+        >
+          Updated
+        </a>
+        <ul
+          *ngIf="upadatedToggle"
+          class="border-0 mt-2 p-0"
+          aria-labelledby="navbarDropdown"
+        >
+          <div class="dropdown-content">
+            <div class="select-date d-flex gap-4 align-items-center">
+              <input
+                type="number"
+                class="form-control fw-normal fw-bold text-clr-dark fs-5"
+                [(ngModel)]="updateMinValue"
+              />
+              <span class="fw-bold text-clr-dark">to</span>
+              <input
+                type="number"
+                class="form-control fw-normal fw-bold text-clr-dark fs-5"
+                [(ngModel)]="updateMaxValue"
+              />
+            </div>
 
-                    Finished
-                  </li>
-                  <li>
-                    <svg-icon src="assets/icons/cardcalendar.svg"></svg-icon>
-                    Planned
-                  </li>
-                </ul>
-                <div class="date">
-                  <p class="m-0 fs-14">{{ item.startDate }}</p>
-                  <p class="m-0 fs-14">{{item.timeToCheck}}</p>
+            <ng5-slider
+              [(value)]="updateMinValue"
+              [(highValue)]="updateMaxValue"
+              [options]="updateOptions"
+            ></ng5-slider>
+          </div>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</aside>
+<div class="calculations">
+  <div [ngClass]="hamburger ? 'home' : 'home-collapse'">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-12">
+              <div class="sort-bar">
+                <h4 class="fs-24">Calculations</h4>
+                <div class="select-box">
+                  <p class="fs-14 m-0">Order by</p>
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Date (Ascending)</option>
+                    <option value="2">Date (Descending)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card-area">
+                <div class="add-new">
+                  <a routerLink="addcalculation">
+                    <svg-icon src="assets/icons/add.svg"></svg-icon>
+                  </a>
+                  <a href="" class="fs-16">Add new calculation</a>
+                </div>
+                <div *ngFor="let item of calculations | filterPipes:filteredString" class="card-item">
+                  <h5 class="fs-20">{{ item.calculationName }}</h5>
+                  <hr />
+                  <ul>
+                    <li>
+                      <svg-icon src="assets/icons/3 users.svg"></svg-icon>
+                      <span>{{ item.numberOfTeams }}</span> teams of
+                      <span>{{ item.peopleOfTeam }}</span>
+                    </li>
+                    <li>
+                      <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
+                      {{ item.startDate }} until {{ item.endDate }}
+                    </li>
+                    <li>
+                      <svg-icon src="assets/icons/flag.svg"></svg-icon>
+
+                      Finished
+                    </li>
+                    <li>
+                      <svg-icon src="assets/icons/cardcalendar.svg"></svg-icon>
+                      Planned
+                    </li>
+                  </ul>
+                  <div class="date">
+                    <p class="m-0 fs-14">{{ item.startDate }}</p>
+                    <p class="m-0 fs-14">{{item.timeToCheck}}</p>
+                  </div>
                 </div>
               </div>
             </div>

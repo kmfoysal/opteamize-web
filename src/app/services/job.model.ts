@@ -1,4 +1,4 @@
-export interface CalculationModel {
+export interface Job {
   id?:number,
   calculationName: string,
   calculationDesc: string,
@@ -27,3 +27,5 @@ export interface CalculationModel {
   timeToCheck: string,
   timeToWrite: string,
 }
+
+

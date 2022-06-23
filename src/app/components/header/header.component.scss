@@ -49,6 +49,11 @@ Navbar
           .nav-link {
             color: #7a46d9;
           }
+          &::after {
+            opacity: 1;
+            visibility: visible;
+            width: 100%;
+          }
         }
 
         &:hover {

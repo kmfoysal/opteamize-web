@@ -32,6 +32,16 @@ body {
     --clr-of-white: #f5f6fa;
     --clr-blue: #269af2;
     --clr-yellow: #f9a633;
+    --clr-dark-gray: #303030;
+    --clr-sky-blue: #269af2;
+    --clr-sky-blue-light: #f7fcff;
+    --clr-blue-light: #e2f3ff;
+    --clr-yellow: #f1a128;
+    --clr-yellow-light: #fffcf9;
+    --clr-yellow-light-2: #fff3e2;
+    --clr-red: #f03b45;
+    --clr-red-light: #fff9f9;
+    --clr-red-light-2: #ffe9e9;
 }
 
 .fs-12{
@@ -67,10 +77,10 @@ body {
 /* helper , base classes */
 
 
-.container-fluid {
-  padding-left: var(--theme-gutter);
-  padding-right: var(--theme-gutter);
-}
+// .container-fluid {
+//   padding-left: var(--theme-gutter);
+//   padding-right: var(--theme-gutter);
+// }
 
 .fw-medium {
   font-weight: 500;
@@ -150,6 +160,9 @@ body {
 .bg-clr-of-white {
   background-color: var(--clr-of-white);
 }
+
+
+
 .form-search {
   background-repeat: no-repeat;
   background-position: 95% center;
@@ -212,3 +225,31 @@ input {
   padding-right: 15px;
 }
 /* helper , base classes  - END*/
+
+
+
+// Scrollbar
+.scrollbar {
+  overflow-y: scroll;
+  margin-bottom: 25px;
+  }
+
+  ::-webkit-scrollbar {
+  width: 3px;
+  background-color: #fff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  -webkit-box-shadow: inset 0 0 6px #E8E8E8;
+  background-color: #E8E8E8;
+  }
+
+
+// @media (max-width: 1040px){
+
+//   .card-area {
+//     grid-template-columns: repeat(auto-fill,minmax(327px,1fr));
+// }
+
+// }

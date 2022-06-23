@@ -7,6 +7,7 @@ import { Options } from 'ng5-slider';
   styleUrls: ['./side-bar.component.scss']
 })
 export class SideBarComponent implements OnInit {
+  
 
   serachToggle:boolean = false;
   teamtoggle:boolean = false;

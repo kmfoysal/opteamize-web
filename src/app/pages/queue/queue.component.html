@@ -1,0 +1,515 @@
+<div class="queue">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="pageWrapper bg-white p-4 radius-16">
+        <div class="new-calculation-wrapper mb-5">
+          <div class="pageHeader br-b2 pb-4 mb-5">
+              <h4 class="fs-4 fw-bold text-clr-dark mb-0">
+                  Queue
+              </h4>
+          </div>
+      </div>
+        <ngb-accordion [closeOthers]="true" activeIds="static-1">
+          <ngb-panel id="static-1">
+            <ng-template ngbPanelTitle> Running </ng-template>
+            <ng-template ngbPanelContent>
+              <div class="accordion-desc">
+                <div class="queue-content">
+                  <div class="row d-flex align-items-center">
+                    <div class="col">
+                      <div
+                        class="queue-wrapper-content road-routing bg-sky-blue-light"
+                      >
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <div
+                              class="improved-content d-flex align-items-center gap-4"
+                            >
+                              <div class="loading-img">
+                                <svg-icon
+                                  src="assets/icons/Running.svg"
+                                ></svg-icon>
+                              </div>
+                              <div class="content-section">
+                                <h2
+                                  class="fs-4 fw-bold text-clr-dark-gray mb-3"
+                                >
+                                  Extra Berekening voor teams <br />
+                                  van 1 (new and improved)
+                                </h2>
+                                <div
+                                  class="progress-bar-wrap d-flex flex-column"
+                                >
+                                  <span class="fs-14 text-clr-sky-blue mb-2"
+                                    >Running</span
+                                  >
+                                  <ngb-progressbar
+                                    class="radius-16 progressBar"
+                                    type="info"
+                                    [value]="50"
+                                  ></ngb-progressbar>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                            <div class="list-wrapper">
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/3 users.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  3 teams of 1
+                                </div>
+                              </div>
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/calendar1.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  24-5-2022 until 31-5-2022
+                                </div>
+                              </div>
+                              <div
+                                class="list-item d-flex align-items-center gap-2"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/timer-start.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  Running for 12 minutes
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                            <div class="list-wrapper">
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/timerEnd.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  4 hour shift
+                                </div>
+                              </div>
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/calendar-tick.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  25-05-2022 10:02am
+                                </div>
+                              </div>
+                              <div
+                                class="list-item d-flex align-items-center gap-2"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/timer-loading.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  Extimated 25 minutes remaining
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-2">
+                            <div
+                              class="d-flex justify-content-center align-items-center"
+                            >
+                              <div
+                                class="stop-icon d-flex flex-column align-items-center justify-content-center bg-blue-light"
+                              >
+                                <a
+                                  href="#"
+                                  class="text-decoration-none text-center"
+                                >
+                                  <svg-icon
+                                    src="assets/icons/stop-circle.svg"
+                                  ></svg-icon>
+                                  <p class="fs-6 text-clr-sky-blue mb-0">
+                                    Stop
+                                  </p>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="static-2">
+            <ng-template ngbPanelTitle> Pending </ng-template>
+            <ng-template ngbPanelContent>
+              <div class="accordion-desc">
+                <div class="pending-content">
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div
+                        class="queue-wrapper-content road-routing bg-yellow-light"
+                      >
+                        <div class="row d-flex align-items-center">
+                          <div class="col-sm-4">
+                            <div
+                              class="improved-content d-flex align-items-center gap-4"
+                            >
+                              <div class="loading-img">
+                                <svg-icon
+                                  src="assets/icons/more.svg"
+                                ></svg-icon>
+                              </div>
+                              <div class="content-section">
+                                <h2 class="fs-4 fw-bold text-clr-dark-gray">
+                                  Extra Berekening voor teams van 2
+                                </h2>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                            <div class="list-wrapper">
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/3 users.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  3 teams of 1
+                                </div>
+                              </div>
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/calendar1.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  24-5-2022 until 31-5-2022
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                            <div class="list-wrapper">
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/timerEnd.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  4 hour shift
+                                </div>
+                              </div>
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/calendar-tick.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  25-05-2022 10:02am
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-2">
+                            <div
+                              class="d-flex justify-content-center align-items-center"
+                            >
+                              <div
+                                class="stop-icon d-flex flex-column align-items-center justify-content-center bg-yellow-light-2"
+                              >
+                                <a
+                                  href="#"
+                                  class="text-decoration-none text-center"
+                                >
+                                  <svg-icon
+                                    src="assets/icons/close-circle.svg"
+                                  ></svg-icon>
+                                  <p class="fs-6 text-clr-yellow mb-0">
+                                    Remove
+                                  </p>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row pt-3">
+                    <div class="col">
+                      <div
+                        class="queue-wrapper-content road-routing bg-yellow-light"
+                      >
+                        <div class="row d-flex align-items-center">
+                          <div class="col-sm-4">
+                            <div
+                              class="improved-content d-flex align-items-center gap-4"
+                            >
+                              <div class="loading-img">
+                                <svg-icon
+                                  src="assets/icons/more.svg"
+                                ></svg-icon>
+                              </div>
+                              <div class="content-section">
+                                <h2 class="fs-4 fw-bold text-clr-dark-gray">
+                                  Extra Berekening voor teams van 2
+                                </h2>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                            <div class="list-wrapper">
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/3 users.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  3 teams of 1
+                                </div>
+                              </div>
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/calendar1.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  24-5-2022 until 31-5-2022
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                            <div class="list-wrapper">
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/timerEnd.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  4 hour shift
+                                </div>
+                              </div>
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/calendar-tick.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  25-05-2022 10:02am
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-2">
+                            <div
+                              class="d-flex justify-content-center align-items-center"
+                            >
+                              <div
+                                class="stop-icon d-flex flex-column align-items-center justify-content-center bg-yellow-light-2"
+                              >
+                                <a
+                                  href="#"
+                                  class="text-decoration-none text-center"
+                                >
+                                  <svg-icon
+                                    src="assets/icons/close-circle.svg"
+                                  ></svg-icon>
+                                  <p class="fs-6 text-clr-yellow mb-0">
+                                    Remove
+                                  </p>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="static-3">
+            <ng-template ngbPanelTitle> Failed </ng-template>
+            <ng-template ngbPanelContent>
+              <div class="accordion-desc">
+                <div class="editsection-content">
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div
+                        class="queue-wrapper-content road-routing bg-red-light"
+                      >
+                        <div class="row d-flex align-items-center">
+                          <div class="col-sm-4">
+                            <div class="improved-content">
+                              <div class="content-section">
+                                <h2 class="fs-4 fw-bold text-clr-dark-gray">
+                                  Berekening voor 3 teams 2 van personen
+                                </h2>
+                                <h5 class="fs-6 text-clr-gray my-4">
+                                  Failed 2 days ago after 3 hours 12 minutes
+                                </h5>
+                                <div class="d-flex align-items-center gap-3">
+                                  <h6
+                                    class="fs-14 text-clr-dark fw-medium mb-0"
+                                  >
+                                    Timeout while fetching public domain
+                                    occupancy from GIPOD
+                                  </h6>
+                                  <img
+                                    src="assets/img/arrow-down.svg"
+                                    alt=""
+                                    class=""
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                            <div class="list-wrapper">
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/3 users.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  3 teams of 1
+                                </div>
+                              </div>
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/calendar1.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  24-5-2022 until 31-5-2022
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                            <div class="list-wrapper">
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/timerEnd.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  4 hour shift
+                                </div>
+                              </div>
+                              <div
+                                class="list-item d-flex align-items-center gap-2 pb-3"
+                              >
+                                <div class="">
+                                  <svg-icon
+                                    src="assets/icons/calendar-tick.svg"
+                                  ></svg-icon>
+                                </div>
+                                <div class="fs-6 text-clr-dark">
+                                  25-05-2022 10:02am
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="col-sm-2">
+                            <div
+                              class="d-flex justify-content-center align-items-center"
+                            >
+                              <div
+                                class="stop-icon d-flex flex-column align-items-center justify-content-center bg-red-light-2"
+                              >
+                                <a
+                                  href=""
+                                  class="text-decoration-none text-center"
+                                >
+                                  <svg-icon
+                                    src="assets/icons/edit-2.svg"
+                                  ></svg-icon>
+                                  <p class="fs-6 text-clr-red mb-0">Edit</p>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </div>
+    </div>
+  </div>
+</div>

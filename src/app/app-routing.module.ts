@@ -3,10 +3,13 @@ import { CalculationsComponent } from './pages/calculations/calculations.compone
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { QueueComponent } from './pages/queue/queue.component';
 
 const routes: Routes = [
   { path: '', component: CalculationsComponent },
   { path: 'addcalculation', component: AddCalculationComponent },
+  { path: 'queue', component: QueueComponent },
+
 ];
 
 @NgModule({
