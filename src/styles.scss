@@ -20,6 +20,8 @@ body {
   --clr-text-color: #606060;
   --clr-light-text-color: #989898;
   --clr-filter-text-color: #7a7a7a;
+  --clr-light-green: #F9FFFD;
+  --clr-green: #26C597;
 
 
 
@@ -38,10 +40,8 @@ body {
     --clr-blue-light: #e2f3ff;
     --clr-yellow: #f1a128;
     --clr-yellow-light: #fffcf9;
-    --clr-yellow-light-2: #fff3e2;
-    --clr-red: #f03b45;
     --clr-red-light: #fff9f9;
-    --clr-red-light-2: #ffe9e9;
+    --clr-red: #F03B45;
 }
 
 .fs-12{
@@ -73,6 +73,15 @@ body {
 }
 
 
+.bg-light-green {
+  background-color: var(--clr-light-green);
+}
+
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
 
 /* helper , base classes */
 
@@ -99,6 +108,97 @@ body {
 .fs-14 {
   font-size: 14px;
 }
+
+.text-blue-dark {
+  color: var(--clr-blue-dark);
+}
+.text-clr-blue {
+  color: var(--clr-blue);
+}
+.text-clr-yellow {
+  color: var(--clr-yellow);
+}
+.text-clr-red {
+  color: var(--clr-red);
+}
+.text-clr-green {
+  color: var(--clr-green);
+}
+
+.text-clr-dark {
+  color: var(--clr-dark);
+}
+.text-clr-gray {
+  color: var(--clr-gray);
+}
+.text-clr-purple {
+  color: var(--clr-purple);
+}
+.text-clr-gray-deep {
+  color: var(--clr-gray-deep);
+}
+
+.bg-blue-dark {
+  background-color: var(--clr-blue-dark);
+}
+.bg-clr-gray-light {
+  background-color: var(--clr-gray-light);
+}
+.bg-clr-of-white {
+  background-color: var(--clr-of-white);
+}
+.bg-clr-purple {
+  background-color: var(--clr-purple);
+}
+.bg-clr-red {
+  background-color: var(--clr-red);
+}
+
+
+
+.fs-22 {
+  font-size: 22px;
+}
+
+.text-clr-dark-gray {
+  color: var(--clr-dark-gray);
+}
+.text-clr-yellow {
+  color: var(--clr-yellow);
+}
+.text-clr-red {
+  color: var(--clr-red);
+}
+
+.bg-sky-blue-light {
+  background-color: var(--clr-sky-blue-light);
+}
+.bg-blue-light {
+  background-color: var(--clr-blue-light);
+}
+.bg-yellow-light {
+  background-color: var(--clr-yellow-light);
+}
+.bg-yellow-light-2 {
+  background-color: var(--clr-yellow-light-2);
+}
+.bg-red-light {
+  background-color: var(--clr-red-light);
+}
+.bg-red-light-2 {
+  background-color: var(--clr-red-light-2);
+}
+
+.text-clr-sky-blue {
+  color: var(--clr-sky-blue);
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+
+
 
 .form-control,
 .form-select {
@@ -228,6 +328,23 @@ input {
 
 
 
+/* css for input-data   */
+.input-data {
+  .form-control {
+      border: 2px solid #e8e8e8;
+      background-image: url("./assets/icons/eye.svg");
+      background-repeat: no-repeat;
+      background-position: 98% center;
+      &::placeholder {
+          color: #989898;
+          font-size: 16px;
+      }
+  }
+}
+/* css for input-data  */
+
+
+
 // Scrollbar
 .scrollbar {
   overflow-y: scroll;
@@ -244,6 +361,9 @@ input {
   -webkit-box-shadow: inset 0 0 6px #E8E8E8;
   background-color: #E8E8E8;
   }
+
+
+
 
 
 // @media (max-width: 1040px){

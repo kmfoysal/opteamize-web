@@ -319,32 +319,35 @@
                   <a href="" class="fs-16">Add new calculation</a>
                 </div>
                 <div *ngFor="let item of calculations | filterPipes:filteredString" class="card-item">
-                  <h5 class="fs-20">{{ item.calculationName }}</h5>
-                  <hr />
-                  <ul>
-                    <li>
-                      <svg-icon src="assets/icons/3 users.svg"></svg-icon>
-                      <span>{{ item.numberOfTeams }}</span> teams of
-                      <span>{{ item.peopleOfTeam }}</span>
-                    </li>
-                    <li>
-                      <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
-                      {{ item.startDate }} until {{ item.endDate }}
-                    </li>
-                    <li>
-                      <svg-icon src="assets/icons/flag.svg"></svg-icon>
+                  <div routerLink="calculations/{{item.id}}">
+                    <h5 class="fs-20">{{ item.calculationName }}</h5>
+                    <hr />
+                    <ul>
+                      <li>
+                        <svg-icon src="assets/icons/3 users.svg"></svg-icon>
+                        <span>{{ item.numberOfTeams }}</span> teams of
+                        <span>{{ item.peopleOfTeam }}</span>
+                      </li>
+                      <li>
+                        <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
+                        {{ item.startDate }} until {{ item.endDate }}
+                      </li>
+                      <li>
+                        <svg-icon src="assets/icons/flag.svg"></svg-icon>
 
-                      Finished
-                    </li>
-                    <li>
-                      <svg-icon src="assets/icons/cardcalendar.svg"></svg-icon>
-                      Planned
-                    </li>
-                  </ul>
-                  <div class="date">
-                    <p class="m-0 fs-14">{{ item.startDate }}</p>
-                    <p class="m-0 fs-14">{{item.timeToCheck}}</p>
+                        Finished
+                      </li>
+                      <li>
+                        <svg-icon src="assets/icons/cardcalendar.svg"></svg-icon>
+                        Planned
+                      </li>
+                    </ul>
+                    <div class="date">
+                      <p class="m-0 fs-14">{{ item.startDate }}</p>
+                      <p class="m-0 fs-14">{{item.timeToCheck}}</p>
+                    </div>
                   </div>
+
                 </div>
               </div>
             </div>

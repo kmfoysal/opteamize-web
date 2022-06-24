@@ -1,0 +1,765 @@
+<div class="add-new-calculation">
+  <div class="container-fluid">
+
+    <pre>{{calculation | json}}</pre>
+
+    <form  class="pageWrapper" *ngIf="isNotEmpty()">
+      <!-- calculation -->
+      <div class="new-calculation-wrapper mb-5">
+        <div
+          class="pageHeader d-flex justify-content-between align-items-center"
+        >
+          <h4 class="fs-24 mb-0">Calculation Details</h4>
+          <ul class="list-unstyled mb-0 d-flex align-items-center gap-5 flex-wrap">
+            <li>
+              <a href="#" class="text-decoration-none d-block text-center">
+                <svg-icon src="assets/icons/copy.svg"></svg-icon>
+                <p class="fs-14 fw-normal text-clr-gray mb-0 mt-1">Copy</p>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none d-block text-center">
+                <svg-icon src="assets/icons/delete.svg"></svg-icon>
+                <p class="fs-14 fw-normal text-clr-gray mb-0 mt-1">Delete</p>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none d-block text-center b-0">
+                <svg-icon src="assets/icons/archieve.svg"></svg-icon>
+                <p class="fs-14 fw-normal text-clr-gray mb-0 mt-1">Archive</p>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none d-block text-center b-0">
+                <svg-icon src="assets/icons/Calendar-plan.svg"></svg-icon>
+                <p class="fs-14 fw-normal text-clr-gray mb-0 mt-1">Plan</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+          <hr/>
+          <div class="failed-calculation">
+
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="calculation-description">
+                        <h5 class="fs-6 text-clr-gray">Name</h5>
+                        <h3 class="fs-5 text-clr-dark mb-5">{{calculation.calculationName}}</h3>
+
+                        <h5 class="fs-6 text-clr-gray pt-3">Description</h5>
+                        <p class="fs-6 text-clr-dark">
+                          {{calculation.calculationDesc}}
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="summary-card d-flex align-items-center justify-content-end">
+                        <div class="summary-inner">
+                            <h2 class="fs-4 text-clr-dark mb-3">Summary</h2>
+
+                            <div class="divider"></div>
+
+                            <div class="list-wrapper pt-3">
+                                <div class="list-item d-flex align-items-center gap-2 pb-3">
+                                    <div class="">
+                                      <svg-icon src="assets/icons/3 users.svg"></svg-icon>
+                                    </div>
+                                    <div class="fs-5 text-clr-dark">{{calculation.numberOfTeams}} teams of {{calculation.peopleOfTeam}}</div>
+                                </div>
+                                <div class="list-item d-flex align-items-center gap-2 pb-3">
+                                    <div class="">
+                                      <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
+                                    </div>
+                                    <div class="fs-5 text-clr-dark">{{calculation.startDate}} until {{calculation.endDate}}</div>
+                                </div>
+                                <div class="list-item d-flex align-items-center gap-2 pb-3">
+                                    <div class="">
+                                      <svg-icon src="assets/icons/flag.svg"></svg-icon>
+                                    </div>
+                                    <div class="fs-5 text-clr-dark">Failed 2 days ago</div>
+                                </div>
+                                <div class="list-item d-flex align-items-center gap-2">
+                                    <div class="">
+                                      <svg-icon src="assets/icons/timerEnd.svg"></svg-icon>
+                                    </div>
+                                    <div class="fs-5 text-clr-dark">4 hour shift</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+      <!--/ calculation -->
+
+      <ngb-accordion [closeOthers]="true" activeIds="static-1">
+        <ngb-panel id="static-1" title="Results">
+          <ng-template ngbPanelContent>
+            <div class="accordion-desc">
+              <div class="faq-content p-3">
+                  <div class="row">
+                      <div class="col-xl-4">
+                          <div class="road-routing bg-clr-of-white p-3 rounded-3 mb-3">
+                              <div class="rr-header mb-5">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-purple fs-5">
+                                    <svg-icon src="assets/icons/layer.svg"></svg-icon>
+                                      Layers
+                                  </h4>
+                              </div>
+                              <div class="result mb-4 pb-2">
+                                  <h3 class="text-clr-dark fw-medium fs-5 mb-3">Results</h3>
+                                  <div class="enforcement-zone bg-white p-3 rounded-3">
+                                      <div class="zone-header pb-3 d-flex align-items-center justify-content-between">
+                                          <h4 class="fs-6 fw-medium text-clr-dark mb-0">
+                                              Enforcement zone
+                                          </h4>
+                                          <div class="btn-wrap d-flex gap-3">
+                                              <button class="btn p-0">
+                                                <svg-icon src="assets/icons/task-small.svg"></svg-icon>
+                                              </button>
+                                              <button class="btn p-0">
+                                                <svg-icon src="assets/icons/eye.svg" class="fs-16"></svg-icon>
+                                              </button>
+                                          </div>
+                                      </div>
+                                      <div class="task-list pt-3">
+                                          <ul class="list-unstyled mb-0">
+                                              <li class="d-flex align-items-center gap-2 mb-2">
+                                                  <svg-icon src="assets/icons/purple-dot.svg"></svg-icon>
+                                                  <span class="fs-14 fw-medium text-clr-dark">Pillaging Pirates</span>
+                                              </li>
+                                              <li class="d-flex align-items-center gap-2 mb-2">
+                                                <svg-icon src="assets/icons/yellow-dot.svg"></svg-icon>
+                                                  <span class="fs-14 fw-medium text-clr-dark">Cool Kids Club</span>
+                                              </li>
+                                              <li class="d-flex align-items-center gap-2 mb-2">
+                                                <svg-icon src="assets/icons/red-dot.svg"></svg-icon>
+                                                  <span class="fs-14 fw-medium text-clr-dark">Blooming Volcanoes</span>
+                                              </li>
+                                              <li class="d-flex align-items-center gap-2 mb-2">
+                                                <svg-icon src="assets/icons/green-dot.svg"></svg-icon>
+                                                  <span class="fs-14 fw-medium text-clr-dark">Cyborg Droids</span>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="rount-field">
+                                  <h3 class="text-clr-dark fw-medium fs-5 mb-3">Input data</h3>
+                                  <div class="input-data mb-3">
+                                      <input type="text" class="form-control h-52" value={{calculation.parkingPressure}} />
+                                  </div>
+                                  <div class="input-data mb-3">
+                                      <input type="text" class="form-control h-52" value={{calculation.parkingZone}} />
+                                  </div>
+                                  <div class="input-data mb-3">
+                                      <input type="text" class="form-control h-52" value={{calculation.parkingLane}} />
+                                  </div>
+                                  <div class="input-data mb-3">
+                                      <input type="text" class="form-control h-52" value={{calculation.publicDomainOccupancy}} />
+                                  </div>
+                                  <div class="input-data mb-3">
+                                      <input type="text" class="form-control h-52" value={{calculation.startingLocation}} />
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-8">
+                          <div class="Select-date bg-clr-of-white p-4 rounded-3 mb-3">
+                              <h4 class="fs-5 fw-medium text-clr-dark">
+                                  Select date
+                              </h4>
+                          </div>
+                          <div class="googleMap">
+                              <iframe class="rounded-3 map-frame"
+                                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6027.686980556155!2d-74.12248674990781!3d40.941097216824474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fb64c7310373%3A0xe52d2c3cada5f6ba!2zUmFkYnVybiwgRmFpciBMYXduLCDgpqjgpr_gpokg4Kac4Ka-4Kaw4KeN4Ka44Ka_IDA3NDEwLCDgpq7gpr7gprDgp43gppXgpr_gpqgg4Kav4KeB4KaV4KeN4Kak4Kaw4Ka-4Ka34KeN4Kaf4KeN4Kaw!5e0!3m2!1sbn!2sbd!4v1655698766522!5m2!1sbn!2sbd"
+                                  width="100%" height="825" style="border:0;" allowfullscreen="" loading="lazy"
+                                  referrerpolicy="no-referrer-when-downgrade">
+                              </iframe>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-2">
+          <ng-template ngbPanelTitle> Configure calculation </ng-template>
+          <ng-template ngbPanelContent>
+            <div class="accordion-desc">
+              <div class="faq-content">
+                  <div class="row">
+                      <div class="col-lg-6 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                    <svg-icon src="assets/icons/people.svg"></svg-icon>
+                                      Teams
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Number of teams</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input  name="numberOfTeams" type="number" class="form-control fw-bold text-clr-dark fs-4 h-56 px-3" value={{calculation.numberOfTeams}}>
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>People of team</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input name="peopleOfTeam" type="number" class="form-control fw-bold text-clr-dark fs-4 h-56 px-3" value={{calculation.peopleOfTeam}}>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                    <svg-icon src="assets/icons/calendar2.svg"></svg-icon>
+                                      Period
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Start date</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input  name="startDate" type="date" class="form-control fw-bold text-clr-dark fs-4 h-56 px-3"
+                                            [defaultValue]="calculation.startDate"/>
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>End date</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input  name="endDate" type="date" class=" form-control fw-bold text-clr-dark fs-4 h-56 px-3"
+                                          value={{calculation.endDate}} />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                    <svg-icon src="assets/icons/timer.svg"></svg-icon>
+                                      Shift
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Length of shift</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input  name="lengthOfShift" type="time" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value={{calculation.lengthOfShift}}  />
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Tolerance</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input  name="tolerance" type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value={{calculation.tolerance}} />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                    <svg-icon src="assets/icons/car.svg"></svg-icon>
+                                      Enforcement zone size
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Minimum number of bays</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input  name="minNumBuys" type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value={{calculation.minNumBuys}}/>
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Maximum number of bays</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input  name="maxNumBuys" type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value={{calculation.maxNumBuys}}/>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-9 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                      <svg-icon src="assets/icons/map.svg"></svg-icon>
+                                      Enforcement zone
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item w-30 p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Reachable on foot in</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input  name="reachableOnFoot" type="time" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value={{calculation.reachableOnFoot}}/>
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item w-30 p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-2">
+                                          <span>Reachable on bike in</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="form-check mb-3">
+                                          <input  name="parkingLane" class="form-check-input" type="checkbox" id="planned" checked="">
+                                          <label class="form-check-label text-clr-gray fw-normal fs-14" for="planned">
+                                              Bike available
+                                          </label>
+                                      </div>
+                                      <div class="not">
+                                          <input  name="reachableOnbike" type="time" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value={{calculation.reachableOnbike}}/>
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item w-30 p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Mix parking tariffs</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span
+                                                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="form-check form-switch d-flex justify-content-center flex-column align-items-center p-0">
+                                          <div class="SwitchChecked mb-3">
+                                              <input  name="mixParkingtriff" class="form-check-input" type="checkbox" id="SwitchChecked" value={{calculation.mixParkingtriff}}/>
+                                          </div>
+                                          <label class="form-check-label d-block me-4" for="SwitchChecked">
+                                              Yes, please
+                                          </label>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4 h-100">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                      <svg-icon src="assets/icons/element-3.svg"></svg-icon>
+                                      Amenities
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item w-100 p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Minimum number of toilets</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not pb-3">
+                                          <input  name="minNumToilets" type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value={{calculation.minNumToilets}} />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                    <svg-icon src="assets/icons/timer.svg"></svg-icon>
+                                      Enforcement time
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Time to check</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input  name="timeToCheck" type="time" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value={{calculation.timeToCheck}}/>
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Time to write</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input  name="timeToWrite" type="time" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value={{calculation.timeToWrite}}/>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 mb-4">
+                          <div class="configureCard bg-clr-of-white rounded-3 p-4">
+                              <div class="rr-header mb-4">
+                                  <h4 class="mb-0 d-flex align-items-center gap-3 text-clr-dark fs-5">
+                                      <svg-icon src="assets/icons/speedometer.svg"></svg-icon>
+                                      Speed
+                                  </h4>
+                              </div>
+                              <div class="cCard-body d-flex gap-5 justify-content-center flex-wrap">
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Walking speed</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input name="walkingSpeed" type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value={{calculation.walkingSpeed}} />
+                                      </div>
+                                  </div>
+                                  <div class="cCard-body-item p-3 bg-white rounded-3 shadow2">
+                                      <h5 class="card-caption fs-6 fw-normal text-clr-dark d-flex justify-content-between gap-3 mb-5">
+                                          <span>Biking speed</span>
+                                          <div class="tooltip-wrap position-relative">
+                                              <span class="tooltip-icon pe-4">
+                                                <svg-icon src="assets/icons/speedometer.svg"></svg-icon>
+                                              </span>
+                                              <p class="tooltips-content position-relative mb-0">
+                                                  <span class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0">
+                                                      The last day that will be included in the result.
+                                                  </span>
+                                              </p>
+                                          </div>
+                                      </h5>
+                                      <div class="not">
+                                          <input name="bikingSpeed" type="number" class="form-control fw-bold text-clr-dark fs-5 h-56 px-3" value={{calculation.bikingSpeed}} />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="static-3">
+          <ng-template ngbPanelTitle> History </ng-template>
+          <ng-template ngbPanelContent>
+            <div class="accordion-desc">
+              <div class="editsection-content">
+                  <div class="row mb-4">
+                      <div class="col">
+                        <div class="queue-wrapper-content bg-light-green green-border mb-5">
+                          <div class="row d-flex align-items-center">
+                              <div class="col-sm-6">
+                                  <div class="improved-content">
+                                      <div class="content-section ">
+                                          <div class="d-flex align-items-center gap-2 mb-4">
+                                            <svg-icon src="assets/icons/tick-circle.svg"></svg-icon>
+                                              <p class="text-clr-green fs-22 mb-0">Calculation successfully completed</p>
+                                          </div>
+                                          <h5 class="fs-6 text-clr-gray my-4">Successfully completed 4 hours ago after 23 minutes</h5>
+
+                                      </div>
+                                  </div>
+                              </div>
+
+
+                              <div class="col-sm-3">
+                                  <div class="list-wrapper">
+                                      <div class="list-item d-flex align-items-center gap-2 pb-3">
+
+                                            <svg-icon src="assets/icons/3 users.svg"></svg-icon>
+
+                                          <div class="fs-6 text-clr-dark">3 teams of 1</div>
+                                      </div>
+                                      <div class="list-item d-flex align-items-center gap-2 pb-3">
+
+                                            <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
+
+                                          <div class="fs-6 text-clr-dark">24-5-2022 until 31-5-2022</div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div class="col-sm-3">
+                                  <div class="list-wrapper">
+                                      <div class="list-item d-flex align-items-center gap-2 pb-3">
+
+                                            <svg-icon src="assets/icons/timerEnd.svg"></svg-icon>
+
+                                          <div class="fs-6 text-clr-dark">4 hour shift</div>
+                                      </div>
+                                      <div class="list-item d-flex align-items-center gap-2 pb-3">
+
+                                         <svg-icon src="assets/icons/calendar-tick.svg"></svg-icon>
+
+                                          <div class="fs-6 text-clr-dark">25-05-2022 10:02am</div>
+                                      </div>
+
+                                  </div>
+                              </div>
+
+                          </div>
+
+                     </div>
+
+                          <div class="queue-wrapper-content road-routing bg-red-light">
+                              <div class="row d-flex align-items-center">
+                                  <div class="col-sm-6">
+                                      <div class="improved-content">
+                                          <div class="content-section ">
+                                              <div class="d-flex align-items-center gap-2 mb-4">
+                                                <svg-icon src="assets/icons/red-close-circle.svg"></svg-icon>
+                                                  <p class="text-clr-red fs-22 mb-0">Calculation failed</p>
+                                              </div>
+                                              <h2 class="fs-4 fw-bold text-clr-dark-gray">Berekening voor 3 teams  2 van personen</h2>
+                                              <h5 class="fs-6 text-clr-gray my-4">Failed 2 days ago after 3 hours 12 minutes</h5>
+                                              <div class="d-flex align-items-center gap-3 cursor-pointer" (click)="this.errorShow = !this.errorShow">
+                                                  <h6 class="fs-14 text-clr-dark fw-bold mb-0">Timeout while fetching public domain occupancy from GIPOD</h6>
+                                                  <svg-icon src="assets/icons/arrow-down.svg"></svg-icon>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+
+
+                                  <div class="col-sm-3">
+                                      <div class="list-wrapper">
+                                          <div class="list-item d-flex align-items-center gap-2 pb-3">
+
+                                                <svg-icon src="assets/icons/3 users.svg"></svg-icon>
+
+                                              <div class="fs-6 text-clr-dark">3 teams of 1</div>
+                                          </div>
+                                          <div class="list-item d-flex align-items-center gap-2 pb-3">
+
+                                                <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
+
+                                              <div class="fs-6 text-clr-dark">24-5-2022 until 31-5-2022</div>
+                                          </div>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-sm-3">
+                                      <div class="list-wrapper">
+                                          <div class="list-item d-flex align-items-center gap-2 pb-3">
+
+                                                <svg-icon src="assets/icons/timerEnd.svg"></svg-icon>
+
+                                              <div class="fs-6 text-clr-dark">4 hour shift</div>
+                                          </div>
+                                          <div class="list-item d-flex align-items-center gap-2 pb-3">
+
+                                             <svg-icon src="assets/icons/calendar-tick.svg"></svg-icon>
+
+                                              <div class="fs-6 text-clr-dark">25-05-2022 10:02am</div>
+                                          </div>
+
+                                      </div>
+                                  </div>
+
+
+                                  <div [ngClass]="errorShow ? 'col-sm-12' : 'd-none'">
+                                      <div class="error-file-list bg-white mt-4">
+                                          <div class="error-file-list-inner text-clr-gray-deep fs-6 scrollbar" id="style-1">
+                                              <div class="force-overflow"></div>
+
+                                              eblogic.transaction.internal.TimedOutException: Transaction timed out after 33 seconds<br>
+                                              BEA1-008AB08D9B8DFE95E711<br>
+                                              at weblogic.ejb.container.internal.EJBRuntimeUtils.throwTransactionRolledback(EJBRuntimeUtils.java:200)<br>
+                                              at weblogic.ejb.container.internal.EJBRuntimeUtils.throwWrappedTransactionRolledback(EJBRuntimeUtils.java:213)<br>
+                                              at weblogic.ejb.container.manager.BaseEJBManager.handleSystemException(BaseEJBManager.java:412)<br>
+                                              at weblogic.ejb.container.manager.BaseEJBManager.setupTxListener(BaseEJBManager.java:334)<br>
+                                              at weblogic.ejb.container.manager.StatelessManager.preInvoke(StatelessManager.java:145)<br>
+                                              at weblogic.ejb.container.internal.BaseRemoteObject.preInvoke(BaseRemoteObject.java:229) <br>
+
+
+                                              eblogic.transaction.internal.TimedOutException: Transaction timed out after 33 seconds<br>
+                                              at weblogic.ejb.container.internal.EJBRuntimeUtils.throwTransactionRolledback(EJBRuntimeUtils.java:200)<br>
+                                              at weblogic.ejb.container.internal.EJBRuntimeUtils.throwWrappedTransactionRolledback(EJBRuntimeUtils.java:213)<br>
+                                              at weblogic.ejb.container.manager.BaseEJBManager.handleSystemException(BaseEJBManager.java:412)<br>
+                                              at weblogic.ejb.container.manager.BaseEJBManager.setupTxListener(BaseEJBManager.java:334)<br>
+                                              at weblogic.ejb.container.manager.StatelessManager.preInvoke(StatelessManager.java:145)<br>
+                                              at weblogic.ejb.container.internal.BaseRemoteObject.preInvoke(BaseRemoteObject.java:229)
+                                          </div>
+                                      </div>
+                                  </div>
+
+                              </div>
+
+                         </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </form>
+  </div>
+</div>

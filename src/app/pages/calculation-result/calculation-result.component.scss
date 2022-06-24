@@ -1,0 +1,224 @@
+.add-new-calculation {
+  box-shadow: 0px 2px 60px rgba(31, 31, 31, 0.02);
+  border-radius: 12px;
+  background-color: #fff;
+  margin: 30px;
+  padding: 15px 30px;
+
+  .new-calculation-wrapper {
+    .pageHeader {
+      h4 {
+        color: var(--clr-title-color);
+      }
+      p {
+        color: var(--clr-filter-text-color);
+      }
+    }
+    hr {
+      opacity: 1;
+      background-color: #e8e8e8;
+      margin-bottom: 30px;
+    }
+  }
+
+  .new-calculation {
+    label {
+      color: var(--clr-text-color);
+    }
+    .form-control {
+      border-radius: 4px;
+      &::placeholder {
+        font-size: 16px;
+      }
+      &:focus {
+        border: 1.5px solid #f03b45 !important;
+      }
+    }
+  }
+
+  /* css for tooltip-wrap  */
+.tooltip-wrap {
+  cursor: pointer;
+  .tooltips-content {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s linear;
+      .tooltips {
+          width: 200px;
+          &.bottom-0 {
+              bottom: -80px !important;
+          }
+      }
+      &::after {
+          position: absolute;
+          right: 18px;
+          top: 4px;
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          background-color: rgb(33, 37, 41);
+          width: 30px;
+          height: 14px;
+          content: "";
+      }
+  }
+  &:hover {
+      .tooltips-content {
+          visibility: visible;
+          opacity: 1;
+      }
+  }
+}
+/* css for tooltip-wrap -END */
+
+/* css for cCard-body-item  */
+.cCard-body-item {
+  width: 45%;
+  .SwitchChecked {
+      .form-check-input {
+          float: initial;
+          width: 60px;
+          height: 30px;
+          &:focus{
+              box-shadow: none;
+          }
+      }
+  }
+}
+.cCard-body-item.w-30 {
+  width: 29%;
+}
+
+/* css for cCard-body-item -END */
+
+/* css for not */
+.not {
+  .datepicker {
+      background-size: 30px;
+      &::placeholder {
+          font-size: 20px;
+          color: var(--clr-dark);
+      }
+  }
+}
+
+/* css for not -END */
+
+}
+
+::ng-deep .accordion-item {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125) !important;
+  margin-bottom: 20px;
+  border-radius: 5px !important;
+  overflow: hidden;
+}
+
+.queue-content {
+  border-top: 0px !important;
+  padding: 45px;
+
+  .road-routing {
+      border-radius: 12px !important;
+      padding: 48px;
+      border: 1px solid var(--clr-sky-blue);
+  }
+
+  .progress-bar-wrap {
+      img {
+          max-width: 263px;
+      }
+  }
+
+  .stop-icon {
+      max-width: 76px;
+      padding: 13px 20px;
+      border-radius: 8px;
+  }
+}
+
+.pending-content {
+  border-top: 0px !important;
+  padding: 45px;
+
+  .road-routing {
+      border-radius: 12px !important;
+      padding: 48px;
+      border: 1px solid var(--clr-yellow);
+  }
+
+  .progress-bar-wrap {
+      img {
+          max-width: 263px;
+      }
+  }
+
+  .stop-icon {
+      max-width: 76px;
+      padding: 13px 20px;
+      border-radius: 8px;
+  }
+}
+
+.editsection-content {
+  border-top: 0px !important;
+  padding: 45px;
+
+  .road-routing {
+      border-radius: 12px !important;
+      padding: 48px;
+      border: 1px solid var(--clr-red);
+  }
+
+  .green-border{
+    border-radius: 12px !important;
+      padding: 48px;
+    border: 1px solid var(--clr-green);
+  }
+
+  .progress-bar-wrap {
+      img {
+          max-width: 263px;
+      }
+  }
+
+  .stop-icon {
+      max-width: 76px;
+      padding: 13px 20px;
+      border-radius: 8px;
+  }
+}
+
+
+
+.error-file-list {
+  padding: 20px;
+  border-radius: 6px;
+}
+.error-file-list-inner {
+  max-height: 236px;
+  overflow-y: auto;
+}
+
+.summary-inner {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 20px 20px 30px 20px;
+}
+
+.divider {
+  max-width: 212px;
+  border-top: 1px solid #e8e8e8;
+  width: 100%;
+}
+
+
+.enforcement-zone {
+  .zone-header {
+      border-bottom: 1px solid #e8e8e8;
+  }
+}
+
+
+.map-frame
+{
+  height: 684px;
+}

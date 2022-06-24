@@ -14,7 +14,7 @@ export interface Job {
   peopleOfTeam: number,
   startDate: string,
   endDate: string,
-  lengthOfShift: number,
+  lengthOfShift: string,
   tolerance: number,
   minNumBuys: number,
   maxNumBuys: number,

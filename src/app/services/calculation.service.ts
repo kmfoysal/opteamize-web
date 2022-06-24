@@ -23,6 +23,14 @@ export class CalculationService {
   }
 
 
+  // Get single Calculation
+
+  public getSingleCalculations(calculationId:string):Observable<Job>{
+    let url:string = `${this.apiUrl}/calculations/${calculationId}`;
+    return this.httpClient.get<Job>(url).pipe(catchError(this.handleError))
+  }
+
+
   // Create Calculations
 
    public createCalculations(calculation: Job):Observable<Job>{
