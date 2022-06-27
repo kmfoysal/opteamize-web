@@ -26,9 +26,9 @@
             <svg-icon src="assets/icons/task.svg"></svg-icon>
             <a class="nav-link" routerLink="/queue">Queue</a>
           </li>
-          <li class="nav-item d-flex align-items-center">
+          <li class="nav-item d-flex align-items-center" [routerLinkActive]="['active']">
             <svg-icon src="assets/icons/calendar.svg"></svg-icon>
-            <a class="nav-link" routerLink="/">Planning</a>
+            <a class="nav-link" routerLink="/planning">Planning</a>
           </li>
         </ul>
         <ul class="navbar-nav">

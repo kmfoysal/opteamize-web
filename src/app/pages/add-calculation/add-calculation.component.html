@@ -22,7 +22,7 @@
               </a>
             </li>
             <li>
-              <button type="submit" class="text-decoration-none d-block text-center b-0">
+              <button type="submit" class="text-center run-btn">
                 <svg-icon src="assets/images/play-circle.svg"></svg-icon>
                 <p class="fs-14 fw-normal text-clr-gray mb-0 mt-1">Run</p>
               </button>
@@ -70,7 +70,8 @@
       <!--/ calculation -->
 
       <ngb-accordion [closeOthers]="true" activeIds="static-1">
-        <ngb-panel id="static-1" title="Select datasets">
+        <ngb-panel id="static-1">
+          <ng-template ngbPanelTitle class="fs-24">Select datasets</ng-template>
           <ng-template ngbPanelContent>
             <div class="accordion-desc">
               <div class="faq-content">

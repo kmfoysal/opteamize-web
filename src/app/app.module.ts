@@ -18,9 +18,13 @@ import { FilterPipesPipe } from './pipes/filter-pipes.pipe';
 import { QueueComponent } from './pages/queue/queue.component';
 import { CalculationResultComponent } from './pages/calculation-result/calculation-result.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { PlanningComponent } from './pages/planning/planning.component';
+import { AddModalComponent } from './components/add-modal/add-modal.component';
+
+
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, HeaderComponent, CalculationsComponent, AddCalculationComponent, SideBarComponent, RangeDatePickerComponent, FilterPipesPipe, QueueComponent, CalculationResultComponent, PageNotFoundComponent],
+  declarations: [AppComponent, FooterComponent, HeaderComponent, CalculationsComponent, AddCalculationComponent, SideBarComponent, RangeDatePickerComponent, FilterPipesPipe, QueueComponent, CalculationResultComponent, PageNotFoundComponent, PlanningComponent, AddModalComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, HttpClientModule, Ng5SliderModule, AngularSvgIconModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent],

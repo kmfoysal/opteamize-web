@@ -1,3 +1,8 @@
+.side-bar-date-picker{
+  display: grid;
+  grid-template-columns: 135px 35px 135px;
+}
+
 .dp-hidden {
   width: 0;
   margin: 0;
@@ -20,4 +25,31 @@
 }
 .custom-day.faded {
   background-color: rgba(2, 117, 216, 0.5);
+}
+
+
+
+::ng-deep .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu), .input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3) {
+  border-right: none !important;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+
+  border-left: 0;
+  border-color: #e8e8e8;
+  background-image: url('../../../assets/icons/calendar.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.input-group:hover.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){
+  border-color: var(--clr-deep-purple);
+}
+
+.btn-outline-secondary:hover {
+  background-color: transparent;
+
 }

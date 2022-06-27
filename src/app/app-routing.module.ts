@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { QueueComponent } from './pages/queue/queue.component';
 import { CalculationResultComponent } from './pages/calculation-result/calculation-result.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { PlanningComponent } from './pages/planning/planning.component';
 
 const routes: Routes = [
   { path: '', component: CalculationsComponent },
   { path: 'addcalculation', component: AddCalculationComponent },
   { path: 'calculations/:calculationId', component: CalculationResultComponent },
   { path: 'queue', component: QueueComponent },
+  { path: 'planning', component: PlanningComponent },
   { path: '**', component: PageNotFoundComponent },
 
 ];

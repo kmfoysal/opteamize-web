@@ -1,0 +1,304 @@
+<aside
+  id="navigation-sidebar"
+  [ngClass]="
+    hamburger
+      ? 'bg-white is-shadow p-4 radius-16 side-bar-open'
+      : 'bg-white is-shadow p-4 radius-16 sidebar-collapse'
+  "
+>
+  <div
+    class="navigation-header d-flex align-items-center justify-content-between gap-3 mb-4"
+  >
+    <h5 class="fs-20" [ngClass]="hamburger ? 'fs-20' : 'd-none'">Filter</h5>
+    <button
+      type="button"
+      class="btn btn-sidebar-toggle btn-sm"
+      (click)="this.hamburger = !this.hamburger"
+    >
+      <svg-icon src="assets/images/menu-bar.svg"></svg-icon>
+      <!-- <img src="assets/images/menu-bar.svg" alt="icon" class="img-fluid" /> -->
+    </button>
+  </div>
+  <div [ngClass]="hamburger ? 'navigation-widget pt-2' : 'd-none'">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown search mb-4">
+        <a
+          class="nav-link dropdown-toggle text-clr-dark fw-normal fs-16 pb-3"
+          role="button"
+          (click)="this.serachToggle = !this.serachToggle"
+        >
+          Search
+        </a>
+        <ul *ngIf="serachToggle" class="border-0 mt-2 p-0">
+          <div class="dropdown-content">
+            <input
+              type="search"
+              class="form-control form-search"
+              placeholder="Search here"
+              [(ngModel)]="filteredString"
+            />
+          </div>
+        </ul>
+      </li>
+      <li class="nav-item dropdown number-of-teams mb-4">
+        <a
+          class="nav-link dropdown-toggle text-clr-dark fw-normal fs-6 pb-3"
+          id="navbarDropdown"
+          role="button"
+          (click)="this.teamtoggle = !this.teamtoggle"
+        >
+          Number of teams
+        </a>
+        <ul
+          *ngIf="teamtoggle"
+          class="border-0 mt-2 p-0"
+          aria-labelledby="navbarDropdown"
+        >
+          <div class="dropdown-content">
+            <div class="team-count d-flex gap-4 align-items-center">
+              <input
+                type="number"
+                class="form-control fw-bold text-clr-dark fs-5"
+                [(ngModel)]="teamsMinValue"
+              />
+              <span class="fw-bold text-clr-dark">to</span>
+              <input
+                type="number"
+                class="form-control fw-bold text-clr-dark fs-5"
+                [(ngModel)]="teamsMaxValue"
+              />
+            </div>
+
+            <ng5-slider
+              [(value)]="teamsMinValue"
+              [(highValue)]="teamsMaxValue"
+              [options]="teamsOptions"
+            ></ng5-slider>
+          </div>
+        </ul>
+      </li>
+      <li class="nav-item dropdown teamsize mb-4">
+        <a
+          class="nav-link dropdown-toggle text-clr-dark fw-normal fs-6 pb-3"
+          id="navbarDropdown"
+          role="button"
+          (click)="this.teamSizetoggle = !this.teamSizetoggle"
+        >
+          People of team
+        </a>
+        <ul
+          *ngIf="teamSizetoggle"
+          class="border-0 mt-2 p-0"
+          aria-labelledby="navbarDropdown"
+        >
+          <div class="dropdown-content">
+            <div class="team-count d-flex gap-4 align-items-center">
+              <input
+                type="number"
+                class="form-control fw-bold text-clr-dark fs-5"
+                [(ngModel)]="teamSizeMinValue"
+              />
+              <span class="fw-bold text-clr-dark">to</span>
+              <input
+                type="number"
+                class="form-control fw-bold text-clr-dark fs-5"
+                [(ngModel)]="teamSizeMaxValue"
+              />
+            </div>
+
+            <ng5-slider
+              [(value)]="teamSizeMinValue"
+              [(highValue)]="teamSizeMaxValue"
+              [options]="teamSizeOptions"
+            ></ng5-slider>
+          </div>
+        </ul>
+      </li>
+      <li class="nav-item dropdown timewindow mb-4">
+        <a
+          class="nav-link dropdown-toggle text-clr-dark fw-normal fs-6 pb-3"
+          id="navbarDropdown"
+          role="button"
+          (click)="this.timeWindowToggle = !this.timeWindowToggle"
+        >
+          Period overlaps
+        </a>
+        <ul
+          *ngIf="timeWindowToggle"
+          class="border-0 mt-2 p-0"
+          aria-labelledby="navbarDropdown"
+        >
+          <div class="dropdown-content">
+            <app-range-date-picker></app-range-date-picker>
+            <ng5-slider
+              [(value)]="teamsMinValue"
+              [(highValue)]="teamsMaxValue"
+              [options]="teamsOptions"
+            ></ng5-slider>
+          </div>
+        </ul>
+      </li>
+      <li class="nav-item dropdown updated mb-4">
+        <a
+          class="nav-link dropdown-toggle text-clr-dark fw-normal fs-6 pb-3"
+          id="navbarDropdown"
+          role="button"
+          (click)="this.upadatedToggle = !this.upadatedToggle"
+        >
+          Updated
+        </a>
+        <ul
+          *ngIf="upadatedToggle"
+          class="border-0 mt-2 p-0"
+          aria-labelledby="navbarDropdown"
+        >
+          <div class="dropdown-content">
+            <div class="select-date d-flex gap-4 align-items-center">
+              <input
+                type="number"
+                class="form-control fw-normal fw-bold text-clr-dark fs-5"
+                [(ngModel)]="updateMinValue"
+              />
+              <span class="fw-bold text-clr-dark">to</span>
+              <input
+                type="number"
+                class="form-control fw-normal fw-bold text-clr-dark fs-5"
+                [(ngModel)]="updateMaxValue"
+              />
+            </div>
+
+            <ng5-slider
+              [(value)]="updateMinValue"
+              [(highValue)]="updateMaxValue"
+              [options]="updateOptions"
+            ></ng5-slider>
+          </div>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</aside>
+<div class="calculations">
+  <div [ngClass]="hamburger ? 'home' : 'home-collapse'">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-12">
+              <div class="sort-bar">
+                <h4 class="fs-24">Calculations</h4>
+                <div class="select-box">
+                  <p class="fs-14 m-0">Order by</p>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Date (Ascending)</option>
+                    <option value="2">Date (Descending)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card-area">
+                <div
+                  *ngFor="
+                    let item of calculations | filterPipes: filteredString
+                  "
+                  class="card-item"
+                >
+                  <div>
+                    <h5 class="fs-20">{{ item.calculationName }}</h5>
+                    <hr />
+                    <ul>
+                      <li>
+                        <svg-icon src="assets/icons/3 users.svg"></svg-icon>
+                        <span>{{ item.numberOfTeams }}</span> teams of
+                        <span>{{ item.peopleOfTeam }}</span>
+                      </li>
+                      <li>
+                        <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
+                        {{ item.startDate }} until {{ item.endDate }}
+                      </li>
+                      <li>
+                        <svg-icon
+                          src="assets/icons/cardcalendar.svg"
+                        ></svg-icon>
+                        Planned
+                      </li>
+                    </ul>
+                    <div class="date">
+                      <p class="m-0 fs-14">{{ item.startDate }}</p>
+                      <p class="m-0 fs-14">{{ item.timeToCheck }}</p>
+                    </div>
+
+                    <button class="remove-btn">
+                      <svg-icon
+                        class="me-2"
+                        src="assets/icons/btn-close-circle.svg"
+                      ></svg-icon>
+                      Remove
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="card-item"
+                >
+                  <div>
+                    <h5 class="fs-20">Marktrock</h5>
+                    <hr />
+                    <ul>
+                      <li>
+                        <svg-icon src="assets/icons/3 users.svg"></svg-icon>
+                        <span>4</span> teams of
+                        <span>5</span>
+                      </li>
+                      <li>
+                        <svg-icon src="assets/icons/calendar1.svg"></svg-icon>
+                        22.04.22 until 13.06.22
+                      </li>
+                      <li>
+                        <svg-icon
+                          src="assets/icons/cardcalendar.svg"
+                        ></svg-icon>
+                        Planned
+                      </li>
+                    </ul>
+                    <div class="date">
+                      <p class="m-0 fs-14">22.04.22</p>
+                      <p class="m-0 fs-14">13.06.22</p>
+                    </div>
+
+                    <button class="add-btn" (click)="openVerticallyCentered(content)">
+                      <svg-icon
+                        class="me-2"
+                        src="assets/icons/btn-add.svg"
+                      ></svg-icon>
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ng-template #content let-modal>
+                <div class="modal-header p-4">
+                  <h4 class="modal-title fw-bold"><svg-icon class="me-3" src="assets/icons/warning.svg"></svg-icon> Warning</h4>
+                </div>
+                <div class="modal-body p-4">
+                  <h5 class="fs-20 mb-4">Marktrock overlaps with</h5>
+                  <div class="overlaps-item">
+                    <input class="overlaps-item-input fs-20 p-0" type="text" value="WK wlelrennen">
+                    <input class="overlaps-item-input p-0" type="text" value="01-03-2022 until 31-4-2022">
+                  </div>
+                  <div class="btn-wrapper">
+                    <button type="button" class="close-btn" (click)="modal.close('Close click')">Cancel</button>
+                    <button class="btn-overwrite">Overwrite</button>
+                  </div>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
