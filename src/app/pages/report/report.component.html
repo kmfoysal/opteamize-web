@@ -1,0 +1,98 @@
+<div class="report">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="report-wrapper">
+          <div class="title-bar">
+            <h4 class="fs-24">Parkeerdruk Rapport</h4>
+            <div class="select-box">
+              <select class="form-select form-control">
+                <option selected>Report</option>
+                <option value="2">Report - 1</option>
+                <option value="2">Report - 2</option>
+              </select>
+            </div>
+          </div>
+          <div class="park-zone my-5">
+            <h5 class="fs-18 fw-bold">Parkeer zones</h5>
+            <p>
+              Selecteer meedere zones door ctrl+rechtermuisknop te gebruiken
+            </p>
+            <div>
+              <app-report-multi-select></app-report-multi-select>
+            </div>
+            <button class="load-btn">Load Data</button>
+          </div>
+          <div class="item-wrapper mb-5">
+            <div class="title-box">
+              <h4 class="fs-24 m-0">Parkeerdruk</h4>
+            </div>
+            <div class="tooltip-box">
+              <h5
+                class="card-caption fw-normal fs-18 text-clr-dark d-flex align-items-center gap-3"
+              >
+                <span class="fs-18 fw-bold">Uitleg gebruik</span>
+                <div class="tooltip-wrap position-relative">
+                  <span class="tooltip-icon pe-4">
+                    <svg-icon src="assets/icons/info-circle.svg"></svg-icon>
+                  </span>
+                  <p class="tooltips-content position-relative mb-0">
+                    <span
+                      class="tooltips p-3 bg-dark rounded-3 text-center fs-14 fw-normal text-white position-absolute bottom-0 end-0"
+                    >
+                      The last day that will be included in the result.
+                    </span>
+                  </p>
+                </div>
+              </h5>
+            </div>
+            <div class="map-box">
+              <iframe
+                class="rounded-3"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6027.686980556155!2d-74.12248674990781!3d40.941097216824474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fb64c7310373%3A0xe52d2c3cada5f6ba!2zUmFkYnVybiwgRmFpciBMYXduLCDgpqjgpr_gpokg4Kac4Ka-4Kaw4KeN4Ka44Ka_IDA3NDEwLCDgpq7gpr7gprDgp43gppXgpr_gpqgg4Kav4KeB4KaV4KeN4Kak4Kaw4Ka-4Ka34KeN4Kaf4KeN4Kaw!5e0!3m2!1sbn!2sbd!4v1655698766522!5m2!1sbn!2sbd"
+                width="100%"
+                height="825"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+          </div>
+          <div class="item-wrapper mb-5">
+            <div class="title-box">
+              <h4 class="fs-24 m-0">Bezetting in de tijd</h4>
+            </div>
+            <div class="chart">
+              <h5 class="fs-20 ms-4">Alle zones</h5>
+              <app-all-zone-chart></app-all-zone-chart>
+            </div>
+            <div class="chart">
+              <h5 class="fs-20 ms-4">zone - 1</h5>
+              <app-zone-one></app-zone-one>
+            </div>
+            <div class="chart">
+              <h5 class="fs-20 ms-4">zone - 2</h5>
+              <app-zone-two></app-zone-two>
+            </div>
+            <div class="chart">
+              <h5 class="fs-20 ms-4">zone - 2</h5>
+              <app-zone-three></app-zone-three>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="item-wrapper mb-5">
+              <div class="title-box">
+                <h4 class="fs-24 m-0">Bezetting per zone per maand</h4>
+              </div>
+              <div class="map-box">
+              </div>
+            </div>
+          </div>
+          <div class="col-8"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

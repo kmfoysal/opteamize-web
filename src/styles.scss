@@ -22,7 +22,7 @@ body {
   --clr-filter-text-color: #7a7a7a;
   --clr-light-green: #F9FFFD;
   --clr-green: #26C597;
-
+  --clr-divider: #e8e8e8;
 
 
   --clr-purple: #7a46d9;
@@ -72,6 +72,10 @@ body {
   line-height: 34px;
 }
 
+
+.text-clr-dark {
+  color: var(--clr-light-text-color);
+}
 
 .bg-light-green {
   background-color: var(--clr-light-green);
@@ -125,9 +129,6 @@ body {
   color: var(--clr-green);
 }
 
-.text-clr-dark {
-  color: var(--clr-dark);
-}
 .text-clr-gray {
   color: var(--clr-gray);
 }

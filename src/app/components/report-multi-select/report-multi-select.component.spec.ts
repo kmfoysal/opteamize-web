@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddModalComponent } from './add-modal.component';
+import { ReportMultiSelectComponent } from './report-multi-select.component';
 
-describe('AddModalComponent', () => {
-  let component: AddModalComponent;
-  let fixture: ComponentFixture<AddModalComponent>;
+describe('ReportMultiSelectComponent', () => {
+  let component: ReportMultiSelectComponent;
+  let fixture: ComponentFixture<ReportMultiSelectComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddModalComponent ]
+      declarations: [ ReportMultiSelectComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddModalComponent);
+    fixture = TestBed.createComponent(ReportMultiSelectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

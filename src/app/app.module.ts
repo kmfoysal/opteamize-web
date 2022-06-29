@@ -19,14 +19,24 @@ import { QueueComponent } from './pages/queue/queue.component';
 import { CalculationResultComponent } from './pages/calculation-result/calculation-result.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PlanningComponent } from './pages/planning/planning.component';
-import { AddModalComponent } from './components/add-modal/add-modal.component';
+import { ReportComponent } from './pages/report/report.component';
+import { ReportMultiSelectComponent } from './components/report-multi-select/report-multi-select.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { AllZoneChartComponent } from './components/all-zone-chart/all-zone-chart.component';
+import { ZoneOneComponent } from './components/zone-one/zone-one.component';
+import { ZoneTwoComponent } from './components/zone-two/zone-two.component';
+import { ZoneThreeComponent } from './components/zone-three/zone-three.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, HeaderComponent, CalculationsComponent, AddCalculationComponent, SideBarComponent, RangeDatePickerComponent, FilterPipesPipe, QueueComponent, CalculationResultComponent, PageNotFoundComponent, PlanningComponent, AddModalComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, HttpClientModule, Ng5SliderModule, AngularSvgIconModule.forRoot()],
+  declarations: [AppComponent, FooterComponent, HeaderComponent, CalculationsComponent, AddCalculationComponent, SideBarComponent, RangeDatePickerComponent, FilterPipesPipe, QueueComponent, CalculationResultComponent, PageNotFoundComponent, PlanningComponent, ReportComponent, ReportMultiSelectComponent, AllZoneChartComponent, ZoneOneComponent, ZoneTwoComponent, ZoneThreeComponent, ],
+
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, HttpClientModule, Ng5SliderModule,NgMultiSelectDropDownModule.forRoot(), AngularSvgIconModule.forRoot(), NgApexchartsModule],
+
   providers: [],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}
