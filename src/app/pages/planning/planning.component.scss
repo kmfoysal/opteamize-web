@@ -1,3 +1,20 @@
+.calendar {
+  .calendar-wrapper {
+    background-color: #fff;
+    padding: 30px;
+    margin: 30px 15px;
+    overflow: hidden;
+    box-shadow: 0px 2px 60px rgba(31, 31, 31, 0.02);
+    border-radius: 12px;
+
+    .title-bar{
+      border-bottom: 1px solid var(--clr-divider);
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
 .calculations {
   padding: 30px 15px;
   .sort-bar {
@@ -29,7 +46,7 @@
 
   .card-area {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(297px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(297px, 1fr));
     gap: 24px;
     .add-new {
       display: flex;
@@ -111,7 +128,7 @@
   box-shadow: 0px 2px 60px rgba(31, 31, 31, 0.02);
   border-radius: 16px;
   position: absolute;
-  top: 110px;
+  top: 830px;
   left: 30px;
   height: 90vh;
   overflow-y: auto;
@@ -182,27 +199,27 @@
   }
 }
 
-.home{
-   padding-left: 357px;
-   transition: 0.5s ease;
+.home {
+  padding-left: 357px;
+  transition: 0.5s ease;
 }
 
-.home-collapse{
+.home-collapse {
   padding-left: 123px;
   transition: 0.5s ease;
 }
 
-.side-bar-open{
+.side-bar-open {
   width: 327px;
   transition: 0.5s ease;
 }
 
-.sidebar-collapse{
+.sidebar-collapse {
   width: 93px;
   transition: 0.5s ease;
 }
 
-.remove-btn{
+.remove-btn {
   border: none;
   background-color: var(--clr-deep-purple);
   height: 50px;
@@ -217,7 +234,7 @@
   margin-top: 30px;
 }
 
-.add-btn{
+.add-btn {
   border: 1px solid var(--clr-deep-purple);
   height: 50px;
   width: 100%;
@@ -232,28 +249,25 @@
   margin-top: 30px;
 }
 
-
-::ng-deep .modal-content{
+::ng-deep .modal-content {
   border-radius: 12px !important;
   border: none;
 }
 
-
-.overlaps-item{
-  border: 2px solid #F03B45;
+.overlaps-item {
+  border: 2px solid #f03b45;
   padding: 24px;
   border-radius: 4px;
 }
 
-.btn-wrapper{
+.btn-wrapper {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-top: 40px;
-
 }
 
-.btn-overwrite{
+.btn-overwrite {
   border: none;
   background-color: var(--clr-deep-purple);
   padding: 13px 30px;
@@ -263,7 +277,7 @@
   border-radius: 4px;
 }
 
-.close-btn{
+.close-btn {
   border: 1px solid var(--clr-deep-purple);
   background-color: transparent;
   padding: 13px 30px;
@@ -274,14 +288,10 @@
   margin-right: 20px;
 }
 
-.overlaps-item-input{
+.overlaps-item-input {
   border: none;
   outline: none;
   box-shadow: none;
   margin-bottom: 10px;
   width: 100%;
 }
-
-
-
-

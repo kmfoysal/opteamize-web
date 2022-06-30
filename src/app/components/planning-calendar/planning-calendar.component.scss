@@ -1,0 +1,47 @@
+
+.custom-calendar{
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  .custom-datepicker {
+    border: none !important;
+  }
+
+  .ngb-dp-week{
+    gap: 5px;
+    margin: 5px;
+  }
+
+  [ngbDatepickerDayView] {
+    background: #26C597;
+    color: #fff;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.ngb-dp-weekday, .ngb-dp-week-number {
+  line-height: 1.5rem;
+  text-align: center;
+  font-style: normal;
+  color: var(--clr-deep-purple);
+  font-weight: 600;
+}
+
+  .ngb-dp-day, .ngb-dp-weekday, .ngb-dp-week-number {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 14px;
+}
+
+.text-primary.p-1.fw-bold {
+  color: #4C4C4C !important;
+}
+}
+
+// ::ng-deep {
+//   .ngb-datepicker.custom-datepicker {
+//     border: none !important;
+//   }
+// }
+

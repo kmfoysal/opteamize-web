@@ -27,11 +27,17 @@ import { AllZoneChartComponent } from './components/all-zone-chart/all-zone-char
 import { ZoneOneComponent } from './components/zone-one/zone-one.component';
 import { ZoneTwoComponent } from './components/zone-two/zone-two.component';
 import { ZoneThreeComponent } from './components/zone-three/zone-three.component';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { BarChartOneComponent } from './components/bar-chart-one/bar-chart-one.component';
+import { BarChartTwoComponent } from './components/bar-chart-two/bar-chart-two.component';
+import { BarChartThreeComponent } from './components/bar-chart-three/bar-chart-three.component';
+import { ReportDatePickerComponent } from './components/report-date-picker/report-date-picker.component';
+import { PlanningCalendarComponent } from './components/planning-calendar/planning-calendar.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, HeaderComponent, CalculationsComponent, AddCalculationComponent, SideBarComponent, RangeDatePickerComponent, FilterPipesPipe, QueueComponent, CalculationResultComponent, PageNotFoundComponent, PlanningComponent, ReportComponent, ReportMultiSelectComponent, AllZoneChartComponent, ZoneOneComponent, ZoneTwoComponent, ZoneThreeComponent, ],
+  declarations: [AppComponent, FooterComponent, HeaderComponent, CalculationsComponent, AddCalculationComponent, SideBarComponent, RangeDatePickerComponent, FilterPipesPipe, QueueComponent, CalculationResultComponent, PageNotFoundComponent, PlanningComponent, ReportComponent, ReportMultiSelectComponent, AllZoneChartComponent, ZoneOneComponent, ZoneTwoComponent, ZoneThreeComponent, BarChartComponent, BarChartOneComponent, BarChartTwoComponent, BarChartThreeComponent, ReportDatePickerComponent, PlanningCalendarComponent, ],
 
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, HttpClientModule, Ng5SliderModule,NgMultiSelectDropDownModule.forRoot(), AngularSvgIconModule.forRoot(), NgApexchartsModule],
 

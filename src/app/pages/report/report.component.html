@@ -13,6 +13,10 @@
               </select>
             </div>
           </div>
+          <div class="mt-5">
+            <h4 class="fs-20">Periode</h4>
+            <app-report-date-picker></app-report-date-picker>
+          </div>
           <div class="park-zone my-5">
             <h5 class="fs-18 fw-bold">Parkeer zones</h5>
             <p>
@@ -81,16 +85,58 @@
               <app-zone-three></app-zone-three>
             </div>
           </div>
-          <div class="col-4">
-            <div class="item-wrapper mb-5">
-              <div class="title-box">
-                <h4 class="fs-24 m-0">Bezetting per zone per maand</h4>
+          <div class="row">
+            <div class="col-3">
+              <div class="item-wrapper mb-5">
+                <div class="title-box">
+                  <h4 class="fs-20 m-0">Bezetting per zone per maand</h4>
+                </div>
+                <div class="map-box">
+                  <app-bar-chart></app-bar-chart>
+                </div>
               </div>
-              <div class="map-box">
+            </div>
+            <div class="col-9">
+              <div class="item-wrapper mb-5">
+                <div class="title-box">
+                  <h4 class="fs-20 m-0">Bezetting per zone per dag van de week</h4>
+                </div>
+                <div class="map-box">
+                  <app-bar-chart-one></app-bar-chart-one>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="item-wrapper mb-5">
+                <div class="title-box">
+                  <h4 class="fs-20 m-0">Bezetting per zone per uur van de dag <span class="fs-6 fw-light">(Om alle uren te zien bij deze grafek kan je scrollen)</span></h4>
+                </div>
+                <div class="map-box">
+                  <app-bar-chart-two></app-bar-chart-two>
+                </div>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="item-wrapper mb-5">
+                <div class="title-box">
+                  <h4 class="fs-20 m-0">Bezetting per zone per dag</h4>
+                </div>
+                <div class="map-box">
+                  <app-bar-chart-three></app-bar-chart-three>
+                </div>
+              </div>
+            </div>
+            <div class="col-9">
+              <div class="item-wrapper mb-5">
+                <div class="title-box">
+                  <h4 class="fs-20 m-0">Bezetting per zone per dag van de week</h4>
+                </div>
+                <div class="map-box">
+                  <app-bar-chart-one></app-bar-chart-one>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-8"></div>
         </div>
       </div>
     </div>

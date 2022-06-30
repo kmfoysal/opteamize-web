@@ -1,0 +1,17 @@
+<div class="d-inline-block custom-calendar">
+
+  <ngb-datepicker class="custom-datepicker pt-1 pb-3"
+                  #dp
+                  [displayMonths]="12"
+                  [startDate]="{year: 2022, month: 1}"
+                  outsideDays="hidden"
+                  [weekdays]="true"
+                  navigation="none">
+    <ng-template ngbDatepickerContent>
+      <div *ngFor="let month of dp.state.months">
+        <div class="text-primary p-1 fw-bold">{{ i18n.getMonthShortName(month.month) }} {{ month.year }}</div>
+        <ngb-datepicker-month class="border rounded" [month]="month" ></ngb-datepicker-month>
+      </div>
+    </ng-template>
+  </ngb-datepicker>
+</div>
