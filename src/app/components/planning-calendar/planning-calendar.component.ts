@@ -11,9 +11,11 @@ import {NgbDatepicker, NgbDatepickerI18n} from '@ng-bootstrap/ng-bootstrap';
       padding: 0;
     }
     .custom-datepicker .ngb-dp-content {
-      display: grid;
-      grid-template-columns: repeat(6,1fr);
-      gap:15px;
+      /* display: grid;
+      grid-template-columns: repeat(12,1fr); */
+      display: flex;
+      flex-wrap: wrap;
+      gap:3px;
     }
   `]
 })

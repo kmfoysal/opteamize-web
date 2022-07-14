@@ -8,20 +8,20 @@
   }
 
   .ngb-dp-week{
-    gap: 5px;
-    margin: 5px;
+    gap: 1.8px;
+    margin: 1.8px;
   }
 
   [ngbDatepickerDayView] {
     background: #26C597;
     color: #fff;
-    width: 1.5rem;
-    height: 1.5rem;
-    line-height: 1.5rem;
+    width: 13px;
+    height: 13px;
+    line-height: 13px;
 }
 
 .ngb-dp-weekday, .ngb-dp-week-number {
-  line-height: 1.5rem;
+  line-height: 13px;
   text-align: center;
   font-style: normal;
   color: var(--clr-deep-purple);
@@ -29,13 +29,15 @@
 }
 
   .ngb-dp-day, .ngb-dp-weekday, .ngb-dp-week-number {
-    width: 1.5rem;
-    height: 1.5rem;
-    font-size: 14px;
+    width: 13px;
+    height: 13px;
+    font-size: 10px;
 }
 
 .text-primary.p-1.fw-bold {
   color: #4C4C4C !important;
+  font-size: 12px;
+  font-weight: bold;
 }
 }
 
