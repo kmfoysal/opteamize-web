@@ -32,6 +32,7 @@ export class PlanningComponent implements OnInit {
     this.calculationService.getAllCalculations().subscribe((data) => (this.calculations = data))
   }
 
+
   openVerticallyCentered(content:any) {
     this.modalService.open(content, { centered: true  });
   }

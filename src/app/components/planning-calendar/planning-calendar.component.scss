@@ -20,6 +20,12 @@
     line-height: 13px;
 }
 
+[ngbDatepickerDayView].outside {
+    background-color: #7a46d9 !important;
+    color: #fff !important;
+    opacity: 1 !important;
+}
+
 .ngb-dp-weekday, .ngb-dp-week-number {
   line-height: 13px;
   text-align: center;
@@ -39,11 +45,9 @@
   font-size: 12px;
   font-weight: bold;
 }
+
 }
 
 // ::ng-deep {
-//   .ngb-datepicker.custom-datepicker {
-//     border: none !important;
-//   }
 // }
 
